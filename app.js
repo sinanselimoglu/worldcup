@@ -75,11 +75,7 @@ async function loadMatches() {
   refreshBtn.disabled = true;
   try {
     const res = await fetch(`matches.json?t=${Date.now()}`);
-
-    if (!res.ok) {
-      throw new Error(`API error ${res.status}`);
-    }
-
+    if (!res.ok) throw new Error(`error ${res.status}`);
     const data = await res.json();
     const matches = data.matches.sort((a, b) => new Date(a.utcDate) - new Date(b.utcDate));
 
