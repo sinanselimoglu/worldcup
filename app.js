@@ -15,6 +15,19 @@ const standingsEl = document.getElementById("standings");
 const refreshBtn = document.getElementById("refresh-btn");
 const modal = document.getElementById("modal");
 const modalBody = document.getElementById("modal-body");
+const tabs = document.getElementById("tabs");
+const liveCount = document.getElementById("live-count");
+let defaultTabPicked = false;
+
+tabs.addEventListener("click", (e) => {
+  const btn = e.target.closest(".tab");
+  if (!btn) return;
+  const name = btn.dataset.tab;
+  tabs.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t === btn));
+  document
+    .querySelectorAll(".tab-panel")
+    .forEach((p) => p.classList.toggle("active", p.dataset.panel === name));
+});
 
 refreshBtn.addEventListener("click", () => loadAll());
 modal.addEventListener("click", (e) => {
@@ -281,8 +294,24 @@ async function loadMatches() {
   const finished = matches.filter((m) => m.state === "finished")
     .sort((a, b) => new Date(b.date) - new Date(a.date));
   render(liveEl, live, "No live matches right now.");
-  render(upcomingEl, upcoming.slice(0, 12), "No upcoming matches scheduled.");
-  render(finishedEl, finished.slice(0, 12), "No results yet.");
+  render(upcomingEl, upcoming.slice(0, 20), "No upcoming matches scheduled.");
+  render(finishedEl, finished.slice(0, 30), "No results yet.");
+
+  // Live count badge
+  if (live.length) {
+    liveCount.textContent = live.length;
+    liveCount.hidden = false;
+  } else {
+    liveCount.hidden = true;
+  }
+
+  // On first load, open the most useful tab: Live if any, else Upcoming.
+  if (!defaultTabPicked) {
+    defaultTabPicked = true;
+    const name = live.length ? "live" : "upcoming";
+    tabs.querySelector(`.tab[data-tab="${name}"]`)?.click();
+  }
+
   statusLine.textContent = `Updated ${new Date().toLocaleTimeString()}${source === "live" ? "" : " · cached"}`;
 }
 
