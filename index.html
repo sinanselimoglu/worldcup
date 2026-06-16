@@ -48,28 +48,24 @@
   </header>
 
   <nav class="tabs" id="tabs">
-    <button class="tab active" data-tab="live">
-      Live <span class="tab-count" id="live-count" hidden>0</span>
+    <button class="tab active" data-tab="matches">
+      Matches <span class="tab-count" id="live-count" hidden>0</span>
     </button>
-    <button class="tab" data-tab="upcoming">Upcoming</button>
-    <button class="tab" data-tab="finished">Results</button>
-    <button class="tab" data-tab="standings">Standings</button>
+    <button class="tab" data-tab="groups">Groups &amp; Results</button>
   </nav>
 
   <main>
-    <section id="live-panel" class="tab-panel active" data-panel="live">
+    <section id="matches-panel" class="tab-panel active" data-panel="matches">
+      <div class="sub-head live-head" id="live-head" hidden>
+        <span class="live-dot"></span> Live Now
+      </div>
       <div id="live-matches" class="match-list"></div>
-    </section>
 
-    <section id="upcoming-panel" class="tab-panel" data-panel="upcoming">
+      <div class="sub-head" id="upcoming-head">Upcoming</div>
       <div id="upcoming-matches" class="match-list"></div>
     </section>
 
-    <section id="finished-panel" class="tab-panel" data-panel="finished">
-      <div id="finished-matches" class="match-list"></div>
-    </section>
-
-    <section id="standings-panel" class="tab-panel" data-panel="standings">
+    <section id="groups-panel" class="tab-panel" data-panel="groups">
       <div id="standings" class="standings-grid"></div>
     </section>
   </main>

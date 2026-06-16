@@ -9,15 +9,17 @@ const FALLBACK_URL = "matches.json";
 
 const statusLine = document.getElementById("status-line");
 const liveEl = document.getElementById("live-matches");
+const liveHead = document.getElementById("live-head");
 const upcomingEl = document.getElementById("upcoming-matches");
-const finishedEl = document.getElementById("finished-matches");
 const standingsEl = document.getElementById("standings");
 const refreshBtn = document.getElementById("refresh-btn");
 const modal = document.getElementById("modal");
 const modalBody = document.getElementById("modal-body");
 const tabs = document.getElementById("tabs");
 const liveCount = document.getElementById("live-count");
-let defaultTabPicked = false;
+
+// Shared state: finished matches, kept so the Groups tab can show each group's results.
+let finishedMatches = [];
 
 tabs.addEventListener("click", (e) => {
   const btn = e.target.closest(".tab");
@@ -155,10 +157,24 @@ function matchCard(m) {
 function render(container, matches, emptyText) {
   container.innerHTML = "";
   if (!matches.length) {
-    container.innerHTML = `<p class="empty">${emptyText}</p>`;
+    container.innerHTML = emptyText ? `<p class="empty">${emptyText}</p>` : "";
     return;
   }
   matches.forEach((m) => container.appendChild(matchCard(m)));
+}
+
+// Compact result row used inside group cards.
+function miniResult(m) {
+  const hs = Number(m.home.score), as = Number(m.away.score);
+  const el = document.createElement("div");
+  el.className = "mini-result";
+  const img = (t) => (t.crest ? `<img src="${t.crest}" alt="" onerror="this.style.display='none'">` : "");
+  el.innerHTML = `
+    <span class="mr-team">${img(m.home)}<span class="mr-name${hs > as ? " mr-win" : ""}">${m.home.name}</span></span>
+    <span class="mr-score">${m.home.score} - ${m.away.score}</span>
+    <span class="mr-team away"><span class="mr-name${as > hs ? " mr-win" : ""}">${m.away.name}</span>${img(m.away)}</span>`;
+  el.addEventListener("click", () => openMatch(m));
+  return el;
 }
 
 // --- Match detail modal ----------------------------------------------------
@@ -241,6 +257,13 @@ async function loadStandings() {
     const d = await res.json();
     const groups = d.children || [];
     standingsEl.innerHTML = "";
+
+    // teamId -> group name, so we can list each group's finished matches.
+    const teamGroup = {};
+    for (const g of groups) {
+      for (const e of g.standings?.entries || []) teamGroup[e.team.id] = g.name;
+    }
+
     for (const g of groups) {
       const entries = g.standings?.entries || [];
       if (!entries.length) continue;
@@ -256,18 +279,33 @@ async function loadStandings() {
           <td>${stat(e, "pointDifferential")}</td>
           <td class="pts">${stat(e, "points")}</td>
         </tr>`).join("");
-      standingsEl.insertAdjacentHTML("beforeend", `
-        <div class="group-table">
-          <h3>${g.name}</h3>
-          <table>
-            <thead><tr><th></th><th></th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
-            <tbody>${rows}</tbody>
-          </table>
-        </div>`);
+
+      const card = document.createElement("div");
+      card.className = "group-table";
+      card.innerHTML = `
+        <h3>${g.name}</h3>
+        <table>
+          <thead><tr><th></th><th></th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+
+      // Finished matches belonging to this group, oldest first.
+      const played = finishedMatches
+        .filter((m) => teamGroup[m.home.id] === g.name || teamGroup[m.away.id] === g.name)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+      if (played.length) {
+        const wrap = document.createElement("div");
+        wrap.className = "group-results";
+        wrap.innerHTML = `<div class="group-results-title">Results</div>`;
+        played.forEach((m) => wrap.appendChild(miniResult(m)));
+        card.appendChild(wrap);
+      }
+
+      standingsEl.appendChild(card);
     }
   } catch (err) {
     console.warn("standings failed", err.message);
-    document.getElementById("standings-section").style.display = "none";
+    document.getElementById("groups-panel").style.display = "none";
   }
 }
 
@@ -293,23 +331,18 @@ async function loadMatches() {
   const upcoming = matches.filter((m) => m.state === "upcoming");
   const finished = matches.filter((m) => m.state === "finished")
     .sort((a, b) => new Date(b.date) - new Date(a.date));
-  render(liveEl, live, "No live matches right now.");
-  render(upcomingEl, upcoming.slice(0, 20), "No upcoming matches scheduled.");
-  render(finishedEl, finished.slice(0, 30), "No results yet.");
+  finishedMatches = finished; // shared with the Groups tab
 
-  // Live count badge
+  liveHead.hidden = live.length === 0;
+  render(liveEl, live, "");
+  render(upcomingEl, upcoming.slice(0, 30), "No upcoming matches scheduled.");
+
+  // Live count badge on the Matches tab
   if (live.length) {
     liveCount.textContent = live.length;
     liveCount.hidden = false;
   } else {
     liveCount.hidden = true;
-  }
-
-  // On first load, open the most useful tab: Live if any, else Upcoming.
-  if (!defaultTabPicked) {
-    defaultTabPicked = true;
-    const name = live.length ? "live" : "upcoming";
-    tabs.querySelector(`.tab[data-tab="${name}"]`)?.click();
   }
 
   statusLine.textContent = `Updated ${new Date().toLocaleTimeString()}${source === "live" ? "" : " · cached"}`;
@@ -319,7 +352,8 @@ async function loadAll() {
   refreshBtn.classList.add("loading");
   refreshBtn.disabled = true;
   try {
-    await Promise.all([loadMatches(), loadStandings()]);
+    await loadMatches(); // sets finishedMatches first
+    await loadStandings(); // groups tab needs finishedMatches
   } catch (err) {
     statusLine.textContent = `Could not load: ${err.message}`;
     console.error(err);
