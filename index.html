@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Cup Matches</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">⚽</span>
+        <h1>World Cup <span class="brand-accent">Live</span></h1>
+      </div>
+      <div class="status-pill">
+        <span class="dot"></span>
+        <span id="status-line">Loading…</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="live-section" class="section">
+      <div class="section-head">
+        <span class="section-icon live-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14M8 8a5 5 0 0 0 0 8M16 8a5 5 0 0 1 0 8"/></svg>
+        </span>
+        <h2>Live Now</h2>
+      </div>
+      <div id="live-matches" class="match-list"></div>
+    </section>
+
+    <section id="upcoming-section" class="section">
+      <div class="section-head">
+        <span class="section-icon upcoming-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </span>
+        <h2>Upcoming</h2>
+      </div>
+      <div id="upcoming-matches" class="match-list"></div>
+    </section>
+
+    <section id="finished-section" class="section">
+      <div class="section-head">
+        <span class="section-icon results-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        </span>
+        <h2>Results</h2>
+      </div>
+      <div id="finished-matches" class="match-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data via football-data.org</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
