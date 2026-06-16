@@ -2,7 +2,7 @@ name: Update match data
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}
 
 permissions:

@@ -4,6 +4,9 @@ const statusLine = document.getElementById("status-line");
 const liveEl = document.getElementById("live-matches");
 const upcomingEl = document.getElementById("upcoming-matches");
 const finishedEl = document.getElementById("finished-matches");
+const refreshBtn = document.getElementById("refresh-btn");
+
+refreshBtn.addEventListener("click", () => loadMatches());
 
 function formatDate(iso) {
   const d = new Date(iso);
@@ -68,6 +71,8 @@ function render(container, matches, emptyText) {
 }
 
 async function loadMatches() {
+  refreshBtn.classList.add("loading");
+  refreshBtn.disabled = true;
   try {
     const res = await fetch(`matches.json?t=${Date.now()}`);
 
@@ -92,6 +97,9 @@ async function loadMatches() {
   } catch (err) {
     statusLine.textContent = `Could not load matches: ${err.message}`;
     console.error(err);
+  } finally {
+    refreshBtn.classList.remove("loading");
+    refreshBtn.disabled = false;
   }
 }
 

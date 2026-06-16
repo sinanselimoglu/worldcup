@@ -78,6 +78,37 @@ header {
   border-radius: 999px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  background: var(--accent);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+#refresh-btn:hover { filter: brightness(1.08); }
+#refresh-btn:active { transform: scale(0.96); }
+
+#refresh-btn.loading svg {
+  animation: spin 0.7s linear infinite;
+}
+
+#refresh-btn:disabled { opacity: 0.7; cursor: default; }
+
 .status-pill .dot {
   width: 7px;
   height: 7px;
@@ -272,4 +303,8 @@ footer {
 @keyframes rise {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
