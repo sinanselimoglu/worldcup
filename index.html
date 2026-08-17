@@ -44,6 +44,16 @@
   </header>
 
   <main>
+    <!-- Live certificate (stock) price banner -->
+    <section class="price-banner" id="price-banner">
+      <div class="pb-main">
+        <div class="pb-label">Sertifika Güncel Fiyatı · <b>DMLKT.G</b></div>
+        <div class="pb-value" id="cert-price">—</div>
+        <div class="pb-change" id="cert-change"></div>
+      </div>
+      <div class="pb-meta" id="cert-meta"></div>
+    </section>
+
     <!-- Headline totals -->
     <section class="stat-row" id="stat-row"></section>
 
@@ -54,16 +64,16 @@
       <div class="prog-legend" id="prog-legend"></div>
     </section>
 
-    <!-- Pricing -->
+    <!-- Cheapest per room type -->
     <section class="card">
-      <div class="card-title">Fiyat Özeti (müsait daireler)</div>
-      <div class="price-row" id="pricing"></div>
+      <div class="card-title">En Uygun Daireler (oda tipine göre en ucuz 5)</div>
+      <div class="cheapest-grid" id="cheapest"></div>
     </section>
 
     <div class="grid-2">
       <!-- By room type -->
       <section class="card">
-        <div class="card-title">Oda Tipine Göre</div>
+        <div class="card-title">Oda Tipine Göre — Başlangıç / En Yüksek Fiyat</div>
         <div id="rooms" class="rooms"></div>
       </section>
 

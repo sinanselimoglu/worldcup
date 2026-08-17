@@ -101,6 +101,34 @@ main {
   gap: 18px;
 }
 
+/* Live price banner */
+.price-banner {
+  background: linear-gradient(135deg, #1f2b4d, #2f6bff);
+  color: white;
+  border-radius: 18px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow);
+  animation: rise 0.4s ease both;
+}
+.pb-label { font-size: 13px; opacity: 0.85; }
+.pb-label b { letter-spacing: 0.03em; }
+.pb-value {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.pb-change { font-size: 14px; font-weight: 600; margin-top: 2px; }
+.pb-change.up { color: #6ee7a8; }
+.pb-change.down { color: #ff9db0; }
+.pb-meta { font-size: 12px; opacity: 0.8; text-align: right; }
+.pb-warn { color: #ffd27a; }
+
 /* Stat cards */
 .stat-row {
   display: grid;
@@ -185,33 +213,65 @@ main {
 }
 .prog-legend span { display: inline-flex; align-items: center; gap: 6px; }
 
-/* Pricing */
-.price-row {
+/* Cheapest per room */
+.cheapest-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
-.price-cell {
-  background: var(--bg);
-  border-radius: 12px;
-  padding: 14px;
+.ch-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
 }
-.pc-label {
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 600;
-  margin-bottom: 6px;
+.ch-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
-.pc-val {
+.ch-room {
   font-family: var(--font-display);
-  font-size: 20px;
   font-weight: 700;
+  font-size: 18px;
 }
-.pc-val.small { font-size: 14px; }
+.ch-stock { font-size: 12px; color: var(--muted); }
+.ch-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+.ch-rank {
+  width: 20px; height: 20px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.ch-loc { flex: 1; min-width: 0; }
+.ch-price { text-align: right; display: flex; flex-direction: column; }
+.ch-tl { font-weight: 700; color: var(--available); font-family: var(--font-display); }
+.ch-cert { font-size: 11px; color: var(--muted); }
 
 /* Rooms */
-.rooms { display: flex; flex-direction: column; gap: 14px; }
-.room-row { }
+.rooms { display: flex; flex-direction: column; gap: 16px; }
+.room-prices {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 4px 0 6px;
+}
+.room-prices b { color: var(--text); font-family: var(--font-display); }
 .room-head {
   display: flex;
   justify-content: space-between;
@@ -268,12 +328,21 @@ main {
   margin-bottom: 8px;
   min-height: 12px;
 }
-.block-cell .bc-price {
+.block-cell .bc-prices {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
   font-size: 11px;
-  color: var(--muted);
-  margin-top: 6px;
   font-weight: 600;
 }
+.block-cell .bc-prices div {
+  display: flex;
+  justify-content: space-between;
+}
+.block-cell .bc-prices span { color: var(--muted); font-weight: 500; }
 .block-cell .bc-bar {
   height: 6px;
   border-radius: 4px;
@@ -308,7 +377,9 @@ footer {
 
 @media (max-width: 720px) {
   .stat-row { grid-template-columns: repeat(2, 1fr); }
-  .price-row { grid-template-columns: repeat(2, 1fr); }
+  .cheapest-grid { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
   .stat-value { font-size: 26px; }
+  .pb-value { font-size: 32px; }
+  .pb-meta { text-align: left; }
 }

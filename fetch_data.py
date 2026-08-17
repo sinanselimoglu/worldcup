@@ -41,6 +41,7 @@ def main():
     status_totals = blank()
     by_rooms = defaultdict(blank)
     room_prices = defaultdict(list)   # available prices per room type
+    room_available = defaultdict(list)  # available units per room type (for cheapest lists)
     by_block = []
     avail_prices = []                 # all available prices
     sold_value = 0
@@ -48,6 +49,7 @@ def main():
 
     for b in blocks:
         bd = get(f"{API}/blocks/{b['id']}")
+        bname = bd.get("name", b.get("name"))
         bstat = blank()
         bprices = []                  # available prices in this block
         for fl in (bd.get("floors") or []):
@@ -65,13 +67,20 @@ def main():
                     avail_value += price
                     bprices.append(price)
                     room_prices[rooms].append(price)
-                elif key == "sold":
-                    sold_value += price
+                    room_available[rooms].append({
+                        "block": bname,
+                        "island": bd.get("island"),
+                        "no": a.get("no"),
+                        "price": price,
+                        "net_area": a.get("net_area"),
+                    })
         by_block.append({
-            "name": bd.get("name", b.get("name")),
+            "name": bname,
             "island": bd.get("island"),
             "parcel": bd.get("parcel"),
             "avg_available_price": round(sum(bprices) / len(bprices)) if bprices else 0,
+            "min_available_price": min(bprices) if bprices else 0,
+            "max_available_price": max(bprices) if bprices else 0,
             **bstat,
         })
         time.sleep(0.05)
@@ -80,8 +89,12 @@ def main():
     name_counts = defaultdict(int)
     for b in by_block:
         name_counts[b["name"]] += 1
+
+    def label_for(name, island):
+        return f"{name} · Ada {island}" if name_counts[name] > 1 else name
+
     for b in by_block:
-        b["label"] = f'{b["name"]} · Ada {b["island"]}' if name_counts[b["name"]] > 1 else b["name"]
+        b["label"] = label_for(b["name"], b["island"])
 
     def room_key(k):
         try:
@@ -90,14 +103,24 @@ def main():
             return 99
 
     rooms_list = []
+    cheapest = {}
     for k, v in sorted(by_rooms.items(), key=lambda kv: room_key(kv[0])):
         prices = room_prices.get(k, [])
         rooms_list.append({
             "key": k,
             **v,
             "avg_available_price": round(sum(prices) / len(prices)) if prices else 0,
-            "min_available_price": min(prices) if prices else 0,
+            "min_available_price": min(prices) if prices else 0,   # starting price
+            "max_available_price": max(prices) if prices else 0,   # maximum price
         })
+        # cheapest 5 available units for this room type
+        units = sorted(room_available.get(k, []), key=lambda u: u["price"])[:5]
+        cheapest[k] = [{
+            "block": label_for(u["block"], u["island"]),
+            "no": u["no"],
+            "price": u["price"],
+            "net_area": u["net_area"],
+        } for u in units]
 
     by_block.sort(key=lambda x: (len(x["name"]), x["name"], x["island"] or ""))
 
@@ -113,9 +136,15 @@ def main():
     data = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "project": project["name"],
+        # All *price* values below are CERTIFICATE COUNTS (Sertifika Adedi), not TL.
+        # TL value = certificate_count * live certificate price (DMLKT.G on Borsa).
+        "unit": "certificates",
+        "ipo_price": 7.59,          # halka arz birim fiyatı
+        "stock_symbol": "DMLKT.G",
         "total": status_totals["total"],
         "status": {k: status_totals[k] for k in ("available", "sold", "reserved")},
         "pricing": pricing,
+        "cheapest_by_room": cheapest,
         "by_rooms": rooms_list,
         "by_block": by_block,
     }
