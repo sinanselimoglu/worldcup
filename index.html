@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mecburen Beraberiz Fifa Word Cup</title>
+<title>Damla Kent — Daire Durumu Özeti</title>
 
-<!-- Open Graph / WhatsApp link preview -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Mecburen Beraberiz Fifa Word Cup">
-<meta property="og:description" content="Mecburen Beraberiz Fifa Word Cup">
-<meta property="og:image" content="https://imgrosetta.mynet.com.tr/file/23922826/1200xauto.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:title" content="Damla Kent — Daire Durumu Özeti">
+<meta property="og:description" content="Damla Kent projesi daire müsaitlik özeti: satılan, müsait ve rezerve daireler — saatlik güncellenir.">
 <meta property="og:url" content="https://www.sinann.com/">
 <link rel="canonical" href="https://www.sinann.com/">
-
-<!-- Twitter (also used by some apps) -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mecburen Beraberiz Fifa Word Cup">
-<meta name="twitter:description" content="Mecburen Beraberiz Fifa Word Cup">
-<meta name="twitter:image" content="https://imgrosetta.mynet.com.tr/file/23922826/1200xauto.jpg">
+<meta name="twitter:title" content="Damla Kent — Daire Durumu Özeti">
+<meta name="twitter:description" content="Daire müsaitlik özeti — saatlik güncellenir.">
+<meta name="description" content="Damla Kent projesi daire müsaitlik özeti.">
 
-<meta name="description" content="Mecburen Beraberiz Fifa Word Cup">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -31,53 +24,59 @@
   <header>
     <div class="header-inner">
       <div class="brand">
-        <span class="brand-mark">⚽</span>
-        <h1>World Cup <span class="brand-accent">Live</span></h1>
+        <span class="brand-mark">🏙️</span>
+        <div>
+          <h1 id="project-name">Damla Kent</h1>
+          <p class="subtitle">Daire Durumu Özeti</p>
+        </div>
       </div>
       <div class="header-actions">
         <div class="status-pill">
           <span class="dot"></span>
-          <span id="status-line">Loading…</span>
+          <span id="status-line">Yükleniyor…</span>
         </div>
-        <button id="refresh-btn" title="Refresh">
+        <button id="refresh-btn" title="Yenile">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg>
-          <span>Refresh</span>
+          <span>Yenile</span>
         </button>
       </div>
     </div>
   </header>
 
-  <nav class="tabs" id="tabs">
-    <button class="tab active" data-tab="matches">
-      Matches <span class="tab-count" id="live-count" hidden>0</span>
-    </button>
-    <button class="tab" data-tab="groups">Groups &amp; Results</button>
-  </nav>
-
   <main>
-    <section id="matches-panel" class="tab-panel active" data-panel="matches">
-      <div class="sub-head live-head" id="live-head" hidden>
-        <span class="live-dot"></span> Live Now
-      </div>
-      <div id="live-matches" class="match-list"></div>
+    <!-- Headline totals -->
+    <section class="stat-row" id="stat-row"></section>
 
-      <div class="sub-head" id="upcoming-head">Upcoming</div>
-      <div id="upcoming-matches" class="match-list"></div>
+    <!-- Availability bar -->
+    <section class="card bar-card">
+      <div class="card-title">Genel Doluluk</div>
+      <div class="prog" id="prog"></div>
+      <div class="prog-legend" id="prog-legend"></div>
     </section>
 
-    <section id="groups-panel" class="tab-panel" data-panel="groups">
-      <div id="standings" class="standings-grid"></div>
+    <div class="grid-2">
+      <!-- By room type -->
+      <section class="card">
+        <div class="card-title">Oda Tipine Göre</div>
+        <div id="rooms" class="rooms"></div>
+      </section>
+
+      <!-- Highlights -->
+      <section class="card">
+        <div class="card-title">Bloklar — Özet</div>
+        <div id="block-summary" class="block-summary"></div>
+      </section>
+    </div>
+
+    <!-- All blocks -->
+    <section class="card">
+      <div class="card-title">Tüm Bloklar (<span id="block-count">0</span>)</div>
+      <div class="block-grid" id="blocks"></div>
     </section>
   </main>
 
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-card">
-      <div id="modal-body"></div>
-    </div>
-  </div>
-
   <footer>
-    <p>Data via football-data.org</p>
+    <p>Veri kaynağı: gayrimenkulsertifika.com · Saatlik güncellenir</p>
   </footer>
 
   <script src="app.js"></script>
