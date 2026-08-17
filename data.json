@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T11:45:30.807105+00:00",
+  "updated_at": "2026-08-17T12:04:49.044219+00:00",
   "project": "DAMLA KENT",
   "total": 2214,
   "status": {
@@ -7,617 +7,964 @@
     "sold": 464,
     "reserved": 27
   },
+  "pricing": {
+    "available_value": 2309295356,
+    "sold_value": 481795213,
+    "avg_available_price": 1340276,
+    "min_available_price": 754255,
+    "max_available_price": 2123851
+  },
   "by_rooms": [
     {
       "key": "1+1",
       "total": 175,
       "available": 18,
       "sold": 149,
-      "reserved": 8
+      "reserved": 8,
+      "avg_available_price": 784694,
+      "min_available_price": 754255
     },
     {
       "key": "2+1",
       "total": 1076,
       "available": 833,
       "sold": 231,
-      "reserved": 12
+      "reserved": 12,
+      "avg_available_price": 1092755,
+      "min_available_price": 863040
     },
     {
       "key": "3+1",
       "total": 758,
       "available": 684,
       "sold": 69,
-      "reserved": 5
+      "reserved": 5,
+      "avg_available_price": 1490475,
+      "min_available_price": 1384916
     },
     {
       "key": "4+1",
       "total": 205,
       "available": 188,
       "sold": 15,
-      "reserved": 2
+      "reserved": 2,
+      "avg_available_price": 1943731,
+      "min_available_price": 1833345
     }
   ],
   "by_block": [
     {
       "name": "A1",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1269532,
       "total": 26,
       "available": 22,
       "sold": 4,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A1 · Ada 2473"
     },
     {
       "name": "A1",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1310554,
       "total": 28,
       "available": 27,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A1 · Ada 2474"
     },
     {
       "name": "A2",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1302996,
       "total": 28,
       "available": 19,
       "sold": 8,
-      "reserved": 1
+      "reserved": 1,
+      "label": "A2 · Ada 2473"
     },
     {
       "name": "A2",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1353765,
       "total": 26,
       "available": 19,
       "sold": 5,
-      "reserved": 2
+      "reserved": 2,
+      "label": "A2 · Ada 2474"
     },
     {
       "name": "A3",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1345162,
       "total": 28,
       "available": 19,
       "sold": 9,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A3 · Ada 2473"
     },
     {
       "name": "A3",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1298678,
       "total": 28,
       "available": 21,
       "sold": 7,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A3 · Ada 2474"
     },
     {
       "name": "A4",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1272590,
       "total": 28,
       "available": 27,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A4 · Ada 2473"
     },
     {
       "name": "A4",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1339825,
       "total": 29,
       "available": 20,
       "sold": 8,
-      "reserved": 1
+      "reserved": 1,
+      "label": "A4 · Ada 2474"
     },
     {
       "name": "A5",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1265418,
       "total": 28,
       "available": 28,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A5 · Ada 2473"
     },
     {
       "name": "A5",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1295809,
       "total": 28,
       "available": 24,
       "sold": 4,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A5 · Ada 2474"
     },
     {
       "name": "A6",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1268077,
       "total": 28,
       "available": 27,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A6 · Ada 2473"
     },
     {
       "name": "A6",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1307085,
       "total": 28,
       "available": 25,
       "sold": 3,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A6 · Ada 2474"
     },
     {
       "name": "A7",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1288817,
       "total": 28,
       "available": 25,
       "sold": 3,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A7 · Ada 2473"
     },
     {
       "name": "A7",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1282953,
       "total": 28,
       "available": 19,
       "sold": 7,
-      "reserved": 2
+      "reserved": 2,
+      "label": "A7 · Ada 2474"
     },
     {
       "name": "A8",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1286401,
       "total": 30,
       "available": 30,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A8 · Ada 2473"
     },
     {
       "name": "A8",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1341413,
       "total": 28,
       "available": 14,
       "sold": 14,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A8 · Ada 2474"
     },
     {
       "name": "A9",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1294193,
       "total": 28,
       "available": 27,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A9 · Ada 2473"
     },
     {
       "name": "A9",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1288876,
       "total": 30,
       "available": 30,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A9 · Ada 2474"
     },
     {
       "name": "B1",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 0,
       "total": 40,
       "available": 0,
       "sold": 40,
-      "reserved": 0
+      "reserved": 0,
+      "label": "B1 · Ada 2473"
     },
     {
       "name": "B1",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1136917,
       "total": 42,
       "available": 35,
       "sold": 7,
-      "reserved": 0
+      "reserved": 0,
+      "label": "B1 · Ada 2474"
     },
     {
       "name": "B2",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1159944,
       "total": 46,
       "available": 39,
       "sold": 7,
-      "reserved": 0
+      "reserved": 0,
+      "label": "B2"
     },
     {
       "name": "B3",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1155105,
       "total": 43,
       "available": 34,
       "sold": 9,
-      "reserved": 0
+      "reserved": 0,
+      "label": "B3"
     },
     {
       "name": "C1",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1232963,
       "total": 36,
       "available": 21,
       "sold": 15,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C1 · Ada 2473"
     },
     {
       "name": "C1",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1223416,
       "total": 30,
       "available": 23,
       "sold": 6,
-      "reserved": 1
+      "reserved": 1,
+      "label": "C1 · Ada 2474"
     },
     {
       "name": "C2",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 0,
       "total": 36,
       "available": 0,
       "sold": 36,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C2 · Ada 2473"
     },
     {
       "name": "C2",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1190672,
       "total": 36,
       "available": 24,
       "sold": 11,
-      "reserved": 1
+      "reserved": 1,
+      "label": "C2 · Ada 2474"
     },
     {
       "name": "C3",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1178455,
       "total": 35,
       "available": 23,
       "sold": 12,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C3 · Ada 2473"
     },
     {
       "name": "C3",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1236835,
       "total": 39,
       "available": 25,
       "sold": 13,
-      "reserved": 1
+      "reserved": 1,
+      "label": "C3 · Ada 2474"
     },
     {
       "name": "C4",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1151440,
       "total": 36,
       "available": 28,
       "sold": 7,
-      "reserved": 1
+      "reserved": 1,
+      "label": "C4 · Ada 2473"
     },
     {
       "name": "C4",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1140851,
       "total": 39,
       "available": 30,
       "sold": 9,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C4 · Ada 2474"
     },
     {
       "name": "C5",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1160319,
       "total": 36,
       "available": 24,
       "sold": 11,
-      "reserved": 1
+      "reserved": 1,
+      "label": "C5 · Ada 2473"
     },
     {
       "name": "C5",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1160471,
       "total": 39,
       "available": 30,
       "sold": 9,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C5 · Ada 2474"
     },
     {
       "name": "C6",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1149074,
       "total": 42,
       "available": 27,
       "sold": 13,
-      "reserved": 2
+      "reserved": 2,
+      "label": "C6"
     },
     {
       "name": "C7",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1145878,
       "total": 39,
       "available": 33,
       "sold": 6,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C7"
     },
     {
       "name": "C8",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1249398,
       "total": 45,
       "available": 12,
       "sold": 33,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C8"
     },
     {
       "name": "C9",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1152340,
       "total": 36,
       "available": 26,
       "sold": 10,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C9"
     },
     {
       "name": "D1",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1633027,
       "total": 24,
       "available": 19,
       "sold": 5,
-      "reserved": 0
+      "reserved": 0,
+      "label": "D1"
     },
     {
       "name": "D2",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1689510,
       "total": 27,
       "available": 24,
       "sold": 3,
-      "reserved": 0
+      "reserved": 0,
+      "label": "D2"
     },
     {
       "name": "D3",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1689823,
       "total": 27,
       "available": 27,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "D3"
     },
     {
       "name": "D4",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1665428,
       "total": 26,
       "available": 26,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "D4"
     },
     {
       "name": "D5",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1667807,
       "total": 26,
       "available": 25,
       "sold": 0,
-      "reserved": 1
+      "reserved": 1,
+      "label": "D5"
     },
     {
       "name": "D6",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1693245,
       "total": 27,
       "available": 27,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "D6"
     },
     {
       "name": "D7",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1698060,
       "total": 28,
       "available": 28,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "D7"
     },
     {
       "name": "E1",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1882308,
       "total": 14,
       "available": 13,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E1 · Ada 2473"
     },
     {
       "name": "E1",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1969402,
       "total": 14,
       "available": 12,
       "sold": 2,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E1 · Ada 2474"
     },
     {
       "name": "E2",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1866821,
       "total": 14,
       "available": 12,
       "sold": 1,
-      "reserved": 1
+      "reserved": 1,
+      "label": "E2 · Ada 2473"
     },
     {
       "name": "E2",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1974510,
       "total": 14,
       "available": 14,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E2 · Ada 2474"
     },
     {
       "name": "E3",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1749262,
       "total": 12,
       "available": 11,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E3 · Ada 2473"
     },
     {
       "name": "E3",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1966308,
       "total": 14,
       "available": 11,
       "sold": 3,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E3 · Ada 2474"
     },
     {
       "name": "E4",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1856107,
       "total": 14,
       "available": 13,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E4 · Ada 2473"
     },
     {
       "name": "E4",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1957178,
       "total": 14,
       "available": 13,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E4 · Ada 2474"
     },
     {
       "name": "E5",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1965118,
       "total": 16,
       "available": 16,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E5"
     },
     {
       "name": "E6",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1924996,
       "total": 16,
       "available": 14,
       "sold": 2,
-      "reserved": 0
+      "reserved": 0,
+      "label": "E6"
     },
     {
       "name": "F1",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1581623,
       "total": 10,
       "available": 10,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F1 · Ada 2473"
     },
     {
       "name": "F1",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1596702,
       "total": 10,
       "available": 6,
       "sold": 4,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F1 · Ada 2474"
     },
     {
       "name": "F2",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1548587,
       "total": 10,
       "available": 9,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F2 · Ada 2473"
     },
     {
       "name": "F2",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1581532,
       "total": 10,
       "available": 8,
       "sold": 2,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F2 · Ada 2474"
     },
     {
       "name": "F3",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1503700,
       "total": 10,
       "available": 7,
       "sold": 3,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F3 · Ada 2473"
     },
     {
       "name": "F3",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1600124,
       "total": 10,
       "available": 9,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F3 · Ada 2474"
     },
     {
       "name": "F4",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1487981,
       "total": 10,
       "available": 8,
       "sold": 2,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F4 · Ada 2473"
     },
     {
       "name": "F4",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1608120,
       "total": 10,
       "available": 9,
       "sold": 1,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F4 · Ada 2474"
     },
     {
       "name": "F5",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1522334,
       "total": 10,
       "available": 7,
       "sold": 3,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F5 · Ada 2473"
     },
     {
       "name": "F5",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1613499,
       "total": 10,
       "available": 7,
       "sold": 3,
-      "reserved": 0
+      "reserved": 0,
+      "label": "F5 · Ada 2474"
     },
     {
       "name": "A10",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 0,
       "total": 26,
       "available": 0,
       "sold": 26,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A10 · Ada 2473"
     },
     {
       "name": "A10",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1282914,
       "total": 30,
       "available": 30,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A10 · Ada 2474"
     },
     {
       "name": "A11",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1251054,
       "total": 26,
       "available": 23,
       "sold": 3,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A11 · Ada 2473"
     },
     {
       "name": "A11",
+      "island": "2474",
+      "parcel": "2",
+      "avg_available_price": 1274164,
       "total": 28,
       "available": 23,
       "sold": 5,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A11 · Ada 2474"
     },
     {
       "name": "A12",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1280467,
       "total": 26,
       "available": 26,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A12"
     },
     {
       "name": "A13",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1295860,
       "total": 26,
       "available": 24,
       "sold": 2,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A13"
     },
     {
       "name": "A14",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1253137,
       "total": 24,
       "available": 22,
       "sold": 0,
-      "reserved": 2
+      "reserved": 2,
+      "label": "A14"
     },
     {
       "name": "A15",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1287785,
       "total": 26,
       "available": 26,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A15"
     },
     {
       "name": "A16",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1294114,
       "total": 26,
       "available": 26,
       "sold": 0,
-      "reserved": 0
+      "reserved": 0,
+      "label": "A16"
     },
     {
       "name": "A17",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1280651,
       "total": 24,
       "available": 23,
       "sold": 0,
-      "reserved": 1
+      "reserved": 1,
+      "label": "A17"
     },
     {
       "name": "A18",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1273125,
       "total": 24,
       "available": 22,
       "sold": 1,
-      "reserved": 1
+      "reserved": 1,
+      "label": "A18"
     },
     {
       "name": "C10",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1155718,
       "total": 42,
       "available": 33,
       "sold": 9,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C10"
     },
     {
       "name": "C11",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1145380,
       "total": 33,
       "available": 28,
       "sold": 5,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C11"
     },
     {
       "name": "C12",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1132631,
       "total": 39,
       "available": 33,
       "sold": 6,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C12"
     },
     {
       "name": "C13",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1137983,
       "total": 36,
       "available": 32,
       "sold": 4,
-      "reserved": 0
+      "reserved": 0,
+      "label": "C13"
     },
     {
       "name": "C14",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1199986,
       "total": 31,
       "available": 18,
       "sold": 12,
-      "reserved": 1
+      "reserved": 1,
+      "label": "C14"
     },
     {
       "name": "C15",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1154758,
       "total": 30,
       "available": 23,
       "sold": 6,
-      "reserved": 1
+      "reserved": 1,
+      "label": "C15"
     },
     {
       "name": "C16",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1143677,
       "total": 30,
       "available": 25,
       "sold": 2,
-      "reserved": 3
+      "reserved": 3,
+      "label": "C16"
     },
     {
       "name": "C17",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1140645,
       "total": 30,
       "available": 23,
       "sold": 5,
-      "reserved": 2
+      "reserved": 2,
+      "label": "C17"
     },
     {
       "name": "C18",
+      "island": "2473",
+      "parcel": "2",
+      "avg_available_price": 1182881,
       "total": 30,
       "available": 21,
       "sold": 8,
-      "reserved": 1
+      "reserved": 1,
+      "label": "C18"
     }
   ]
 }

@@ -185,6 +185,30 @@ main {
 }
 .prog-legend span { display: inline-flex; align-items: center; gap: 6px; }
 
+/* Pricing */
+.price-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.price-cell {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 14px;
+}
+.pc-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.pc-val {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+}
+.pc-val.small { font-size: 14px; }
+
 /* Rooms */
 .rooms { display: flex; flex-direction: column; gap: 14px; }
 .room-row { }
@@ -237,7 +261,18 @@ main {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 14px;
+}
+.block-cell .bc-ada {
+  font-size: 10px;
+  color: var(--muted);
   margin-bottom: 8px;
+  min-height: 12px;
+}
+.block-cell .bc-price {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-weight: 600;
 }
 .block-cell .bc-bar {
   height: 6px;
@@ -273,6 +308,7 @@ footer {
 
 @media (max-width: 720px) {
   .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .price-row { grid-template-columns: repeat(2, 1fr); }
   .grid-2 { grid-template-columns: 1fr; }
   .stat-value { font-size: 26px; }
 }

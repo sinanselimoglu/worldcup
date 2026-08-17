@@ -5,6 +5,12 @@ const projectName = document.getElementById("project-name");
 
 const el = (id) => document.getElementById(id);
 const fmt = (n) => n.toLocaleString("tr-TR");
+const tl = (n) => n.toLocaleString("tr-TR", { maximumFractionDigits: 0 }) + " ₺";
+function tlShort(n) {
+  if (n >= 1e9) return (n / 1e9).toLocaleString("tr-TR", { maximumFractionDigits: 2 }) + " Mr ₺";
+  if (n >= 1e6) return (n / 1e6).toLocaleString("tr-TR", { maximumFractionDigits: 1 }) + " Mn ₺";
+  return tl(n);
+}
 
 refreshBtn.addEventListener("click", load);
 
@@ -43,12 +49,20 @@ function render(d) {
     <span><span class="swatch sw-sold"></span> Satılan ${fmt(s.sold)} (%${pct(s.sold, total)})</span>
     <span><span class="swatch sw-reserved"></span> Rezerve ${fmt(s.reserved)} (%${pct(s.reserved, total)})</span>`;
 
+  // Pricing (available stock)
+  const p = d.pricing || {};
+  el("pricing").innerHTML = `
+    <div class="price-cell"><div class="pc-label">Müsait stok değeri</div><div class="pc-val">${tlShort(p.available_value || 0)}</div></div>
+    <div class="price-cell"><div class="pc-label">Satılan değeri</div><div class="pc-val">${tlShort(p.sold_value || 0)}</div></div>
+    <div class="price-cell"><div class="pc-label">Ortalama fiyat</div><div class="pc-val">${tl(p.avg_available_price || 0)}</div></div>
+    <div class="price-cell"><div class="pc-label">Fiyat aralığı</div><div class="pc-val small">${tl(p.min_available_price || 0)} – ${tl(p.max_available_price || 0)}</div></div>`;
+
   // Rooms
   el("rooms").innerHTML = d.by_rooms.map((r) => `
     <div class="room-row">
       <div class="room-head">
         <span class="room-name">${r.key}</span>
-        <span class="room-nums"><b>${fmt(r.available)}</b> müsait / ${fmt(r.total)} toplam</span>
+        <span class="room-nums"><b>${fmt(r.available)}</b> müsait / ${fmt(r.total)} toplam${r.avg_available_price ? ` · ort. ${tlShort(r.avg_available_price)}` : ""}</span>
       </div>
       <div class="room-bar">
         <span class="rb-available" style="width:${pct(r.available, r.total)}%"></span>
@@ -65,20 +79,22 @@ function render(d) {
   el("block-summary").innerHTML = `
     <div class="bs-row"><span class="bs-label">Toplam blok</span><span class="bs-val">${blocks.length}</span></div>
     <div class="bs-row"><span class="bs-label">Tükenen blok (0 müsait)</span><span class="bs-val">${soldOut}</span></div>
-    <div class="bs-row"><span class="bs-label">En çok müsait</span><span class="bs-val">${mostAvail.name} · ${fmt(mostAvail.available)}</span></div>
-    <div class="bs-row"><span class="bs-label">En çok satılan</span><span class="bs-val">${bestSold.name} · ${fmt(bestSold.sold)}</span></div>`;
+    <div class="bs-row"><span class="bs-label">En çok müsait</span><span class="bs-val">${mostAvail.label} · ${fmt(mostAvail.available)}</span></div>
+    <div class="bs-row"><span class="bs-label">En çok satılan</span><span class="bs-val">${bestSold.label} · ${fmt(bestSold.sold)}</span></div>`;
 
   // All blocks
   el("block-count").textContent = blocks.length;
   el("blocks").innerHTML = blocks.map((b) => `
-    <div class="block-cell ${b.available === 0 ? "sold-out" : ""}" title="${b.name}: ${b.available} müsait, ${b.sold} satılan, ${b.reserved} rezerve">
+    <div class="block-cell ${b.available === 0 ? "sold-out" : ""}" title="${b.label}: ${b.available} müsait, ${b.sold} satılan, ${b.reserved} rezerve${b.avg_available_price ? ` · ort. ${tl(b.avg_available_price)}` : ""}">
       <div class="bc-name">${b.name}</div>
+      <div class="bc-ada">${b.island ? "Ada " + b.island : ""}</div>
       <div class="bc-bar">
         <span class="bc-available" style="width:${pct(b.available, b.total)}%"></span>
         <span class="bc-sold" style="width:${pct(b.sold, b.total)}%"></span>
         <span class="bc-reserved" style="width:${pct(b.reserved, b.total)}%"></span>
       </div>
       <div class="bc-nums"><b>${b.available}</b> / ${b.total}</div>
+      ${b.avg_available_price ? `<div class="bc-price">${tlShort(b.avg_available_price)}</div>` : ""}
     </div>`).join("");
 
   const when = new Date(d.updated_at);
