@@ -1,24 +1,42 @@
 {
-  "updated_at": "2026-08-18T08:34:59.888411+00:00",
+  "updated_at": "2026-08-18T09:31:50.722766+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
   "stock_symbol": "DMLKT.G",
   "total": 2214,
   "status": {
-    "available": 1723,
+    "available": 1740,
     "sold": 464,
-    "reserved": 27
+    "reserved": 10
   },
   "pricing": {
-    "available_value": 2309295356,
+    "available_value": 2327870958,
     "sold_value": 0,
-    "avg_available_price": 1340276,
-    "min_available_price": 754255,
+    "avg_available_price": 1337857,
+    "min_available_price": 695701,
     "max_available_price": 2123851
   },
   "cheapest_by_room": {
     "1+1": [
+      {
+        "block": "C3 · Ada 2474",
+        "no": "10",
+        "price": 695701,
+        "net_area": 44.98
+      },
+      {
+        "block": "C16",
+        "no": "25",
+        "price": 729470,
+        "net_area": 44.98
+      },
+      {
+        "block": "C18",
+        "no": "13",
+        "price": 729918,
+        "net_area": 44.98
+      },
       {
         "block": "B3",
         "no": "11",
@@ -26,27 +44,9 @@
         "net_area": 41.94
       },
       {
-        "block": "C5 · Ada 2473",
+        "block": "C6",
         "no": "1",
-        "price": 759507,
-        "net_area": 44.98
-      },
-      {
-        "block": "B2",
-        "no": "12",
-        "price": 765335,
-        "net_area": 41.94
-      },
-      {
-        "block": "B2",
-        "no": "14",
-        "price": 766304,
-        "net_area": 41.94
-      },
-      {
-        "block": "C14",
-        "no": "1",
-        "price": 775766,
+        "price": 758825,
         "net_area": 44.98
       }
     ],
@@ -151,40 +151,40 @@
     {
       "key": "1+1",
       "total": 175,
-      "available": 18,
+      "available": 22,
       "sold": 149,
-      "reserved": 8,
-      "avg_available_price": 784694,
-      "min_available_price": 754255,
+      "reserved": 4,
+      "avg_available_price": 774473,
+      "min_available_price": 695701,
       "max_available_price": 835253
     },
     {
       "key": "2+1",
       "total": 1076,
-      "available": 833,
+      "available": 842,
       "sold": 231,
-      "reserved": 12,
-      "avg_available_price": 1092755,
+      "reserved": 3,
+      "avg_available_price": 1092089,
       "min_available_price": 863040,
       "max_available_price": 1594208
     },
     {
       "key": "3+1",
       "total": 758,
-      "available": 684,
+      "available": 687,
       "sold": 69,
-      "reserved": 5,
-      "avg_available_price": 1490475,
+      "reserved": 2,
+      "avg_available_price": 1490446,
       "min_available_price": 1384916,
       "max_available_price": 2012508
     },
     {
       "key": "4+1",
       "total": 205,
-      "available": 188,
+      "available": 189,
       "sold": 15,
-      "reserved": 2,
-      "avg_available_price": 1943731,
+      "reserved": 1,
+      "avg_available_price": 1943689,
       "min_available_price": 1833345,
       "max_available_price": 2123851
     }
@@ -233,13 +233,13 @@
       "name": "A2",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1353765,
+      "avg_available_price": 1330949,
       "min_available_price": 1086402,
       "max_available_price": 1708276,
       "total": 26,
-      "available": 19,
+      "available": 21,
       "sold": 5,
-      "reserved": 2,
+      "reserved": 0,
       "label": "A2 · Ada 2474"
     },
     {
@@ -363,13 +363,13 @@
       "name": "A7",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1282953,
+      "avg_available_price": 1275615,
       "min_available_price": 1072201,
       "max_available_price": 1533962,
       "total": 28,
-      "available": 19,
+      "available": 20,
       "sold": 7,
-      "reserved": 2,
+      "reserved": 1,
       "label": "A7 · Ada 2474"
     },
     {
@@ -519,13 +519,13 @@
       "name": "C2",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1190672,
+      "avg_available_price": 1178201,
       "min_available_price": 806505,
       "max_available_price": 1938585,
       "total": 36,
-      "available": 24,
+      "available": 25,
       "sold": 11,
-      "reserved": 1,
+      "reserved": 0,
       "label": "C2 · Ada 2474"
     },
     {
@@ -545,26 +545,26 @@
       "name": "C3",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1236835,
-      "min_available_price": 911163,
+      "avg_available_price": 1216022,
+      "min_available_price": 695701,
       "max_available_price": 1670812,
       "total": 39,
-      "available": 25,
+      "available": 26,
       "sold": 13,
-      "reserved": 1,
+      "reserved": 0,
       "label": "C3 · Ada 2474"
     },
     {
       "name": "C4",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1151440,
+      "avg_available_price": 1143385,
       "min_available_price": 872644,
       "max_available_price": 1605901,
       "total": 36,
-      "available": 28,
+      "available": 29,
       "sold": 7,
-      "reserved": 1,
+      "reserved": 0,
       "label": "C4 · Ada 2473"
     },
     {
@@ -610,13 +610,13 @@
       "name": "C6",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1149074,
-      "min_available_price": 866294,
+      "avg_available_price": 1127266,
+      "min_available_price": 758825,
       "max_available_price": 1525504,
       "total": 42,
-      "available": 27,
+      "available": 29,
       "sold": 13,
-      "reserved": 2,
+      "reserved": 0,
       "label": "C6"
     },
     {
@@ -714,13 +714,13 @@
       "name": "D5",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1667807,
+      "avg_available_price": 1678108,
       "min_available_price": 1475192,
-      "max_available_price": 1924296,
+      "max_available_price": 1935649,
       "total": 26,
-      "available": 25,
+      "available": 26,
       "sold": 0,
-      "reserved": 1,
+      "reserved": 0,
       "label": "D5"
     },
     {
@@ -1091,13 +1091,13 @@
       "name": "A14",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1253137,
+      "avg_available_price": 1257685,
       "min_available_price": 1074185,
       "max_available_price": 1487357,
       "total": 24,
-      "available": 22,
+      "available": 24,
       "sold": 0,
-      "reserved": 2,
+      "reserved": 0,
       "label": "A14"
     },
     {
@@ -1130,13 +1130,13 @@
       "name": "A17",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1280651,
+      "avg_available_price": 1275568,
       "min_available_price": 1088668,
       "max_available_price": 1516343,
       "total": 24,
-      "available": 23,
+      "available": 24,
       "sold": 0,
-      "reserved": 1,
+      "reserved": 0,
       "label": "A17"
     },
     {
@@ -1208,13 +1208,13 @@
       "name": "C14",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1199986,
+      "avg_available_price": 1214892,
       "min_available_price": 775766,
       "max_available_price": 1500518,
       "total": 31,
-      "available": 18,
+      "available": 19,
       "sold": 12,
-      "reserved": 1,
+      "reserved": 0,
       "label": "C14"
     },
     {
@@ -1234,39 +1234,39 @@
       "name": "C16",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1143677,
-      "min_available_price": 782155,
+      "avg_available_price": 1127746,
+      "min_available_price": 729470,
       "max_available_price": 1553910,
       "total": 30,
-      "available": 25,
+      "available": 26,
       "sold": 2,
-      "reserved": 3,
+      "reserved": 2,
       "label": "C16"
     },
     {
       "name": "C17",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1140645,
+      "avg_available_price": 1145414,
       "min_available_price": 805451,
       "max_available_price": 1548963,
       "total": 30,
-      "available": 23,
+      "available": 25,
       "sold": 5,
-      "reserved": 2,
+      "reserved": 0,
       "label": "C17"
     },
     {
       "name": "C18",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1182881,
-      "min_available_price": 887665,
+      "avg_available_price": 1162292,
+      "min_available_price": 729918,
       "max_available_price": 1544015,
       "total": 30,
-      "available": 21,
+      "available": 22,
       "sold": 8,
-      "reserved": 1,
+      "reserved": 0,
       "label": "C18"
     }
   ]
