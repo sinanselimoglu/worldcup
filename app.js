@@ -113,30 +113,69 @@ function statCard(label, value, sub, cls, swatch) {
     </div>`;
 }
 
-// Cheapest 5 per room type
+// Available units per room type, cheapest first, paginated (20 at a time).
+const PAGE = 20;
+const shown = {}; // room -> how many rows currently displayed
+
+function chRow(u, i) {
+  return `
+    <div class="ch-row">
+      <span class="ch-rank">${i + 1}</span>
+      <span class="ch-loc">${u.block} · No ${u.no}${u.net_area ? ` · ${u.net_area} m²` : ""}</span>
+      <span class="ch-price">
+        <span class="ch-tl">${tl(toTL(u.price))}</span>
+        <span class="ch-cert">${fmtInt(u.price)} sertifika</span>
+      </span>
+    </div>`;
+}
+
+// Re-render just one room card's rows + button (keeps its current "shown" count).
+function paintRoom(room) {
+  const d = cachedData;
+  const units = (d.available_by_room && d.available_by_room[room]) || [];
+  const n = Math.min(shown[room], units.length);
+  const rowsEl = document.querySelector(`.ch-card[data-room="${room}"] .ch-rows`);
+  const btnEl = document.querySelector(`.ch-card[data-room="${room}"] .ch-more`);
+  if (!rowsEl) return;
+  rowsEl.innerHTML = units.slice(0, n).map(chRow).join("") ||
+    '<div class="empty">Müsait daire yok</div>';
+  if (btnEl) {
+    const remaining = units.length - n;
+    if (remaining > 0) {
+      btnEl.hidden = false;
+      btnEl.textContent = `Daha fazla göster (${Math.min(PAGE, remaining)} / ${remaining} kaldı)`;
+    } else {
+      btnEl.hidden = true;
+    }
+  }
+}
+
 function renderCheapest(d) {
   const roomsMeta = Object.fromEntries(d.by_rooms.map((r) => [r.key, r]));
-  el("cheapest").innerHTML = Object.entries(d.cheapest_by_room).map(([room, units]) => {
+  el("cheapest").innerHTML = Object.keys(d.available_by_room).map((room) => {
     const meta = roomsMeta[room] || {};
-    const rows = units.map((u, i) => `
-      <div class="ch-row">
-        <span class="ch-rank">${i + 1}</span>
-        <span class="ch-loc">${u.block} · No ${u.no}${u.net_area ? ` · ${u.net_area} m²` : ""}</span>
-        <span class="ch-price">
-          <span class="ch-tl">${tl(toTL(u.price))}</span>
-          <span class="ch-cert">${fmtInt(u.price)} sertifika</span>
-        </span>
-      </div>`).join("");
+    if (shown[room] == null) shown[room] = PAGE; // initial page
     return `
-      <div class="ch-card">
+      <div class="ch-card" data-room="${room}">
         <div class="ch-head">
           <span class="ch-room">${room}</span>
           <span class="ch-stock">${fmtInt(meta.available || 0)} müsait · başlangıç ${tlShort(toTL(meta.min_available_price || 0))}</span>
         </div>
-        ${rows || '<div class="empty">Müsait daire yok</div>'}
+        <div class="ch-rows"></div>
+        <button class="ch-more" data-room="${room}" hidden></button>
       </div>`;
   }).join("");
+  Object.keys(d.available_by_room).forEach(paintRoom);
 }
+
+// "Daha fazla göster" — reveal 20 more for that room.
+el("cheapest").addEventListener("click", (e) => {
+  const btn = e.target.closest(".ch-more");
+  if (!btn) return;
+  const room = btn.dataset.room;
+  shown[room] = (shown[room] || PAGE) + PAGE;
+  paintRoom(room);
+});
 
 // By room type: starting + max price
 function renderRooms(d) {

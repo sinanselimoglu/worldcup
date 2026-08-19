@@ -103,7 +103,7 @@ def main():
             return 99
 
     rooms_list = []
-    cheapest = {}
+    available_by_room = {}
     for k, v in sorted(by_rooms.items(), key=lambda kv: room_key(kv[0])):
         prices = room_prices.get(k, [])
         rooms_list.append({
@@ -113,9 +113,9 @@ def main():
             "min_available_price": min(prices) if prices else 0,   # starting price
             "max_available_price": max(prices) if prices else 0,   # maximum price
         })
-        # cheapest 5 available units for this room type
-        units = sorted(room_available.get(k, []), key=lambda u: u["price"])[:5]
-        cheapest[k] = [{
+        # ALL available units for this room type, cheapest first (for paginated list)
+        units = sorted(room_available.get(k, []), key=lambda u: u["price"])
+        available_by_room[k] = [{
             "block": label_for(u["block"], u["island"]),
             "no": u["no"],
             "price": u["price"],
@@ -144,7 +144,7 @@ def main():
         "total": status_totals["total"],
         "status": {k: status_totals[k] for k in ("available", "sold", "reserved")},
         "pricing": pricing,
-        "cheapest_by_room": cheapest,
+        "available_by_room": available_by_room,
         "by_rooms": rooms_list,
         "by_block": by_block,
     }

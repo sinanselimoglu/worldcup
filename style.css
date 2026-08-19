@@ -261,6 +261,21 @@ main {
 .ch-price { text-align: right; display: flex; flex-direction: column; }
 .ch-tl { font-weight: 700; color: var(--available); font-family: var(--font-display); }
 .ch-cert { font-size: 11px; color: var(--muted); }
+.ch-more {
+  width: 100%;
+  margin-top: 10px;
+  padding: 9px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.ch-more:hover { background: var(--accent); color: white; border-color: var(--accent); }
 
 /* Rooms */
 .rooms { display: flex; flex-direction: column; gap: 16px; }
