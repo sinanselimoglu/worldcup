@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-19T08:35:47.858173+00:00",
+  "updated_at": "2026-08-19T09:32:44.400379+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
@@ -7,8 +7,8 @@
   "total": 2214,
   "status": {
     "available": 1740,
-    "sold": 465,
-    "reserved": 9
+    "sold": 466,
+    "reserved": 8
   },
   "pricing": {
     "available_value": 2327870958,
@@ -10482,8 +10482,8 @@
       "key": "2+1",
       "total": 1076,
       "available": 842,
-      "sold": 232,
-      "reserved": 2,
+      "sold": 233,
+      "reserved": 1,
       "avg_available_price": 1092089,
       "min_available_price": 863040,
       "max_available_price": 1594208
@@ -10909,8 +10909,8 @@
       "max_available_price": 1472574,
       "total": 36,
       "available": 24,
-      "sold": 11,
-      "reserved": 1,
+      "sold": 12,
+      "reserved": 0,
       "label": "C5 · Ada 2473"
     },
     {
