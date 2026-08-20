@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-08-20T05:29:25.350727+00:00",
+  "updated_at": "2026-08-20T06:42:58.273695+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
   "stock_symbol": "DMLKT.G",
   "total": 2214,
   "status": {
-    "available": 1734,
+    "available": 1733,
     "sold": 467,
-    "reserved": 13
+    "reserved": 14
   },
   "pricing": {
-    "available_value": 2319342868,
+    "available_value": 2317863270,
     "sold_value": 0,
-    "avg_available_price": 1337568,
+    "avg_available_price": 1337486,
     "min_available_price": 695701,
     "max_available_price": 2123851
   },
@@ -7440,12 +7440,6 @@
         "net_area": 98.49
       },
       {
-        "block": "A8 · Ada 2474",
-        "no": "24",
-        "price": 1479598,
-        "net_area": 103.88
-      },
-      {
         "block": "A17",
         "no": "12",
         "price": 1479627,
@@ -10455,10 +10449,10 @@
     {
       "key": "3+1",
       "total": 758,
-      "available": 683,
+      "available": 682,
       "sold": 70,
-      "reserved": 5,
-      "avg_available_price": 1490095,
+      "reserved": 6,
+      "avg_available_price": 1490110,
       "min_available_price": 1384916,
       "max_available_price": 2012508
     },
@@ -10673,13 +10667,13 @@
       "name": "A8",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1341413,
+      "avg_available_price": 1330784,
       "min_available_price": 1089272,
       "max_available_price": 1505492,
       "total": 28,
-      "available": 14,
+      "available": 13,
       "sold": 14,
-      "reserved": 0,
+      "reserved": 1,
       "label": "A8 · Ada 2474"
     },
     {
