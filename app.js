@@ -16,6 +16,7 @@ const price4 = (n) => n.toLocaleString("tr-TR", { minimumFractionDigits: 2, maxi
 
 const STOCK_URL = (from, to) =>
   `https://gate.fintables.com/barbar/udf/history?symbol=DMLKT.G&resolution=5&from=${from}&to=${to}`;
+const aptUrl = (id) => `https://proje.gayrimenkulsertifika.com/apartments/${id}`;
 
 let certPrice = null; // live TL per certificate
 let ipoPrice = 7.59;
@@ -95,6 +96,7 @@ function render(d) {
     <span><span class="swatch sw-sold"></span> Satılan ${fmtInt(s.sold)} (%${pct(s.sold, total)})</span>
     <span><span class="swatch sw-reserved"></span> Rezerve ${fmtInt(s.reserved)} (%${pct(s.reserved, total)})</span>`;
 
+  renderRecent(d);
   renderCheapest(d);
   renderRooms(d);
   renderBlockSummary(d);
@@ -113,20 +115,53 @@ function statCard(label, value, sub, cls, swatch) {
     </div>`;
 }
 
+// Recent status changes (sold / reserved), newest first.
+function timeAgo(iso) {
+  const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+  if (diff < 3600) return `${Math.max(1, Math.round(diff / 60))} dk önce`;
+  if (diff < 86400) return `${Math.round(diff / 3600)} sa önce`;
+  return `${Math.round(diff / 86400)} gün önce`;
+}
+
+function renderRecent(d) {
+  const sub = el("recent-sub");
+  const since = d.tracking_since ? new Date(d.tracking_since).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" }) : null;
+  sub.innerHTML = `<span class="rc-badge sold">${d.sold_24h || 0} son 24s</span><span class="rc-badge">${d.sold_7d || 0} son 7g</span>${since ? ` · ${since}'den beri takip` : ""}`;
+
+  const changes = d.recent_changes || [];
+  if (!changes.length) {
+    el("recent").innerHTML = `<p class="empty">Takip başladığından beri durum değişikliği yok. Yeni satış/rezervasyonlar burada görünecek.</p>`;
+    return;
+  }
+  el("recent").innerHTML = changes.map((e) => {
+    const isSold = e.to === 2;
+    const badge = isSold ? `<span class="rc-tag sold">Satıldı</span>` : e.to === 3 ? `<span class="rc-tag reserved">Rezerve</span>` : `<span class="rc-tag">${e.to_key}</span>`;
+    return `
+      <a class="rc-row" href="${aptUrl(e.id)}" target="_blank" rel="noopener">
+        ${badge}
+        <span class="rc-info">${e.room}${e.net_area ? ` · ${e.net_area} m²` : ""} · ${e.label} · No ${e.no}</span>
+        <span class="rc-price">${tl(toTL(e.price))}</span>
+        <span class="rc-time">${timeAgo(e.ts)}</span>
+      </a>`;
+  }).join("");
+}
+
 // Available units per room type, cheapest first, paginated (20 at a time).
 const PAGE = 20;
 const shown = {}; // room -> how many rows currently displayed
 
 function chRow(u, i) {
+  const tag = u.id ? "a" : "div";
+  const href = u.id ? ` href="${aptUrl(u.id)}" target="_blank" rel="noopener"` : "";
   return `
-    <div class="ch-row">
+    <${tag} class="ch-row"${href}>
       <span class="ch-rank">${i + 1}</span>
       <span class="ch-loc">${u.block} · No ${u.no}${u.net_area ? ` · ${u.net_area} m²` : ""}</span>
       <span class="ch-price">
         <span class="ch-tl">${tl(toTL(u.price))}</span>
         <span class="ch-cert">${fmtInt(u.price)} sertifika</span>
       </span>
-    </div>`;
+    </${tag}>`;
 }
 
 // Re-render just one room card's rows + button (keeps its current "shown" count).

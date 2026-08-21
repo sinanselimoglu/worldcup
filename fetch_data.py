@@ -8,6 +8,7 @@ Note: some blocks share a display name (e.g. two "A1") but are different
 buildings on different ada (island). Such names are disambiguated with the ada.
 """
 import json
+import os
 import time
 import urllib.request
 from collections import defaultdict
@@ -16,6 +17,9 @@ from datetime import datetime, timezone
 API = "https://api.gayrimenkulsertifika.com"
 PROJECT_ID = 1
 STATUS = {1: "available", 2: "sold", 3: "reserved"}
+STATE_FILE = "state.json"       # {apartment_id: status} snapshot from the previous run
+HISTORY_FILE = "history.json"   # append-only log of status-change events
+MAX_HISTORY = 2000              # keep the most recent N events
 
 
 def get(url, retries=3):
@@ -28,6 +32,14 @@ def get(url, retries=3):
             if i == retries - 1:
                 raise
             time.sleep(2)
+
+
+def load_json(path, default):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return default
 
 
 def blank():
@@ -46,6 +58,7 @@ def main():
     avail_prices = []                 # all available prices
     sold_value = 0
     avail_value = 0
+    all_apts = {}                     # id -> details (for state diff + history)
 
     for b in blocks:
         bd = get(f"{API}/blocks/{b['id']}")
@@ -59,6 +72,18 @@ def main():
                     continue
                 rooms = a.get("number_of_rooms") or "?"
                 price = a.get("price") or 0
+                aid = a.get("id")
+                if aid is not None:
+                    all_apts[str(aid)] = {
+                        "id": aid,
+                        "status": a.get("status"),
+                        "room": rooms,
+                        "net_area": a.get("net_area"),
+                        "no": a.get("no"),
+                        "block": bname,
+                        "island": bd.get("island"),
+                        "price": price,
+                    }
                 for bucket in (status_totals, bstat, by_rooms[rooms]):
                     bucket["total"] += 1
                     bucket[key] += 1
@@ -68,6 +93,7 @@ def main():
                     bprices.append(price)
                     room_prices[rooms].append(price)
                     room_available[rooms].append({
+                        "id": aid,
                         "block": bname,
                         "island": bd.get("island"),
                         "no": a.get("no"),
@@ -116,6 +142,7 @@ def main():
         # ALL available units for this room type, cheapest first (for paginated list)
         units = sorted(room_available.get(k, []), key=lambda u: u["price"])
         available_by_room[k] = [{
+            "id": u["id"],
             "block": label_for(u["block"], u["island"]),
             "no": u["no"],
             "price": u["price"],
@@ -133,6 +160,47 @@ def main():
         "max_available_price": max(avail_prices) if avail_prices else 0,
     }
 
+    # --- Status-change tracking (sold / reserved dates going forward) ----------
+    now_iso = datetime.now(timezone.utc).isoformat()
+    prev_state = load_json(STATE_FILE, None)   # {id: status} or None on first run
+    history = load_json(HISTORY_FILE, [])
+    new_state = {aid: a["status"] for aid, a in all_apts.items()}
+
+    if prev_state is not None:
+        for aid, a in all_apts.items():
+            old = prev_state.get(aid)
+            new = a["status"]
+            if old is not None and old != new:
+                history.append({
+                    "ts": now_iso,
+                    "id": a["id"],
+                    "label": label_for(a["block"], a["island"]),
+                    "no": a["no"],
+                    "room": a["room"],
+                    "net_area": a["net_area"],
+                    "price": a["price"],
+                    "from": old,
+                    "to": new,
+                    "from_key": STATUS.get(old, str(old)),
+                    "to_key": STATUS.get(new, str(new)),
+                })
+    baseline = prev_state is None
+    history = history[-MAX_HISTORY:]
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(new_state, f)
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False)
+
+    # recent-sale counters for the dashboard
+    now_ts = datetime.now(timezone.utc)
+    def within(ev, hours):
+        try:
+            return (now_ts - datetime.fromisoformat(ev["ts"])).total_seconds() <= hours * 3600
+        except Exception:
+            return False
+    sold_24h = sum(1 for e in history if e["to"] == 2 and within(e, 24))
+    sold_7d = sum(1 for e in history if e["to"] == 2 and within(e, 24 * 7))
+
     data = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "project": project["name"],
@@ -144,6 +212,10 @@ def main():
         "total": status_totals["total"],
         "status": {k: status_totals[k] for k in ("available", "sold", "reserved")},
         "pricing": pricing,
+        "tracking_since": (prev_state is not None) and load_json("data.json", {}).get("tracking_since", now_iso) or now_iso,
+        "sold_24h": sold_24h,
+        "sold_7d": sold_7d,
+        "recent_changes": list(reversed(history))[:40],  # newest first
         "available_by_room": available_by_room,
         "by_rooms": rooms_list,
         "by_block": by_block,
@@ -151,7 +223,8 @@ def main():
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"Wrote data.json: {data['total']} apartments, {data['status']}, "
-          f"available value {pricing['available_value']:,} TL across {len(by_block)} blocks")
+          f"available value {pricing['available_value']:,} TL, "
+          f"{'BASELINE run' if baseline else str(len(history)) + ' history events'}")
 
 
 if __name__ == "__main__":
