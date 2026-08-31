@@ -1,26 +1,78 @@
 {
-  "updated_at": "2026-08-31T03:51:28.631688+00:00",
+  "updated_at": "2026-08-31T10:34:32.218264+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
   "stock_symbol": "DMLKT.G",
   "total": 2214,
   "status": {
-    "available": 1718,
-    "sold": 481,
+    "available": 1716,
+    "sold": 483,
     "reserved": 15
   },
   "pricing": {
-    "available_value": 2299600432,
+    "available_value": 2297351195,
     "sold_value": 0,
-    "avg_available_price": 1338533,
+    "avg_available_price": 1338783,
     "min_available_price": 695701,
     "max_available_price": 2123851
   },
   "tracking_since": "2026-08-21T07:25:07.857593+00:00",
-  "sold_24h": 0,
-  "sold_7d": 10,
+  "sold_24h": 2,
+  "sold_7d": 11,
   "recent_changes": [
+    {
+      "ts": "2026-08-31T10:34:32.214947+00:00",
+      "id": 1750,
+      "label": "A7 · Ada 2474",
+      "no": "19",
+      "room": "2+1",
+      "net_area": 76.57,
+      "price": 1127914,
+      "from": 1,
+      "to": 3,
+      "from_key": "available",
+      "to_key": "reserved"
+    },
+    {
+      "ts": "2026-08-31T10:34:32.214947+00:00",
+      "id": 1604,
+      "label": "A2 · Ada 2474",
+      "no": "21",
+      "room": "2+1",
+      "net_area": 76.57,
+      "price": 1121323,
+      "from": 1,
+      "to": 3,
+      "from_key": "available",
+      "to_key": "reserved"
+    },
+    {
+      "ts": "2026-08-31T10:34:32.214947+00:00",
+      "id": 1291,
+      "label": "D2",
+      "no": "4",
+      "room": "2+1",
+      "net_area": 107.18,
+      "price": 1378974,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
+    {
+      "ts": "2026-08-31T10:34:32.214947+00:00",
+      "id": 824,
+      "label": "C6",
+      "no": "26",
+      "room": "2+1",
+      "net_area": 59.53,
+      "price": 922986,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
     {
       "ts": "2026-08-28T21:06:33.316870+00:00",
       "id": 1759,
@@ -3976,13 +4028,6 @@
         "net_area": 76.57
       },
       {
-        "id": 1604,
-        "block": "A2 · Ada 2474",
-        "no": "21",
-        "price": 1121323,
-        "net_area": 76.57
-      },
-      {
         "id": 53,
         "block": "A2 · Ada 2473",
         "no": "26",
@@ -4127,13 +4172,6 @@
         "block": "A9 · Ada 2474",
         "no": "22",
         "price": 1127542,
-        "net_area": 76.57
-      },
-      {
-        "id": 1750,
-        "block": "A7 · Ada 2474",
-        "no": "19",
-        "price": 1127914,
         "net_area": 76.57
       },
       {
@@ -12423,10 +12461,10 @@
     {
       "key": "2+1",
       "total": 1076,
-      "available": 829,
-      "sold": 239,
+      "available": 827,
+      "sold": 241,
       "reserved": 8,
-      "avg_available_price": 1091755,
+      "avg_available_price": 1091676,
       "min_available_price": 863040,
       "max_available_price": 1594208
     },
@@ -12495,13 +12533,13 @@
       "name": "A2",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1330949,
+      "avg_available_price": 1341430,
       "min_available_price": 1086402,
       "max_available_price": 1708276,
       "total": 26,
-      "available": 21,
+      "available": 20,
       "sold": 5,
-      "reserved": 0,
+      "reserved": 1,
       "label": "A2 · Ada 2474"
     },
     {
@@ -12625,13 +12663,13 @@
       "name": "A7",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1308117,
+      "avg_available_price": 1320989,
       "min_available_price": 1072201,
       "max_available_price": 1533962,
       "total": 28,
-      "available": 15,
+      "available": 14,
       "sold": 10,
-      "reserved": 3,
+      "reserved": 4,
       "label": "A7 · Ada 2474"
     },
     {
@@ -12877,8 +12915,8 @@
       "max_available_price": 1525504,
       "total": 42,
       "available": 28,
-      "sold": 13,
-      "reserved": 1,
+      "sold": 14,
+      "reserved": 0,
       "label": "C6"
     },
     {
@@ -12942,8 +12980,8 @@
       "max_available_price": 2006505,
       "total": 27,
       "available": 23,
-      "sold": 3,
-      "reserved": 1,
+      "sold": 4,
+      "reserved": 0,
       "label": "D2"
     },
     {
