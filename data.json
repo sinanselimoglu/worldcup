@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01T07:18:24.326138+00:00",
+  "updated_at": "2026-09-01T13:07:21.012135+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
@@ -7,8 +7,8 @@
   "total": 2214,
   "status": {
     "available": 1715,
-    "sold": 483,
-    "reserved": 16
+    "sold": 485,
+    "reserved": 14
   },
   "pricing": {
     "available_value": 2296248019,
@@ -19,8 +19,34 @@
   },
   "tracking_since": "2026-08-21T07:25:07.857593+00:00",
   "sold_24h": 2,
-  "sold_7d": 10,
+  "sold_7d": 12,
   "recent_changes": [
+    {
+      "ts": "2026-09-01T13:07:20.946226+00:00",
+      "id": 1750,
+      "label": "A7 · Ada 2474",
+      "no": "19",
+      "room": "2+1",
+      "net_area": 76.57,
+      "price": 1127914,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
+    {
+      "ts": "2026-09-01T13:07:20.946226+00:00",
+      "id": 1748,
+      "label": "A7 · Ada 2474",
+      "no": "17",
+      "room": "3+1",
+      "net_area": 103.88,
+      "price": 1446538,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
     {
       "ts": "2026-09-01T07:18:24.322927+00:00",
       "id": 1694,
@@ -12468,8 +12494,8 @@
       "key": "2+1",
       "total": 1076,
       "available": 826,
-      "sold": 241,
-      "reserved": 9,
+      "sold": 242,
+      "reserved": 8,
       "avg_available_price": 1091662,
       "min_available_price": 863040,
       "max_available_price": 1594208
@@ -12478,8 +12504,8 @@
       "key": "3+1",
       "total": 758,
       "available": 678,
-      "sold": 78,
-      "reserved": 2,
+      "sold": 79,
+      "reserved": 1,
       "avg_available_price": 1489882,
       "min_available_price": 1384916,
       "max_available_price": 2012508
@@ -12674,8 +12700,8 @@
       "max_available_price": 1533962,
       "total": 28,
       "available": 14,
-      "sold": 10,
-      "reserved": 4,
+      "sold": 12,
+      "reserved": 2,
       "label": "A7 · Ada 2474"
     },
     {
