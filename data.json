@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-09-03T01:04:06.358767+00:00",
+  "updated_at": "2026-09-03T06:52:33.800469+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
   "stock_symbol": "DMLKT.G",
   "total": 2214,
   "status": {
-    "available": 1716,
+    "available": 1715,
     "sold": 486,
-    "reserved": 12
+    "reserved": 13
   },
   "pricing": {
-    "available_value": 2297369342,
+    "available_value": 2295912278,
     "sold_value": 0,
-    "avg_available_price": 1338793,
+    "avg_available_price": 1338724,
     "min_available_price": 695701,
     "max_available_price": 2123851
   },
@@ -21,6 +21,19 @@
   "sold_24h": 1,
   "sold_7d": 8,
   "recent_changes": [
+    {
+      "ts": "2026-09-03T06:52:33.797704+00:00",
+      "id": 1692,
+      "label": "A5 · Ada 2474",
+      "no": "20",
+      "room": "3+1",
+      "net_area": 103.88,
+      "price": 1457064,
+      "from": 1,
+      "to": 3,
+      "from_key": "available",
+      "to_key": "reserved"
+    },
     {
       "ts": "2026-09-02T13:15:31.783086+00:00",
       "id": 1983,
@@ -8113,13 +8126,6 @@
         "net_area": 103.88
       },
       {
-        "id": 1692,
-        "block": "A5 · Ada 2474",
-        "no": "20",
-        "price": 1457064,
-        "net_area": 103.88
-      },
-      {
         "id": 220,
         "block": "A8 · Ada 2473",
         "no": "23",
@@ -12536,10 +12542,10 @@
     {
       "key": "3+1",
       "total": 758,
-      "available": 678,
+      "available": 677,
       "sold": 79,
-      "reserved": 1,
-      "avg_available_price": 1489882,
+      "reserved": 2,
+      "avg_available_price": 1489930,
       "min_available_price": 1384916,
       "max_available_price": 2012508
     },
@@ -12676,13 +12682,13 @@
       "name": "A5",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1324058,
+      "avg_available_price": 1317408,
       "min_available_price": 1062955,
       "max_available_price": 1673976,
       "total": 28,
-      "available": 21,
+      "available": 20,
       "sold": 6,
-      "reserved": 1,
+      "reserved": 2,
       "label": "A5 · Ada 2474"
     },
     {
