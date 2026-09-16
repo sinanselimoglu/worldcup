@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T09:05:15.183423+00:00",
+  "updated_at": "2026-09-16T14:36:19.359542+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
@@ -7,8 +7,8 @@
   "total": 2214,
   "status": {
     "available": 1700,
-    "sold": 500,
-    "reserved": 14
+    "sold": 501,
+    "reserved": 13
   },
   "pricing": {
     "available_value": 2276788764,
@@ -19,8 +19,21 @@
   },
   "tracking_since": "2026-08-21T07:25:07.857593+00:00",
   "sold_24h": 1,
-  "sold_7d": 9,
+  "sold_7d": 10,
   "recent_changes": [
+    {
+      "ts": "2026-09-16T14:36:19.355770+00:00",
+      "id": 474,
+      "label": "A18",
+      "no": "15",
+      "room": "2+1",
+      "net_area": 76.57,
+      "price": 1098806,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
     {
       "ts": "2026-09-16T09:05:15.180558+00:00",
       "id": 2160,
@@ -523,19 +536,6 @@
       "room": "2+1",
       "net_area": 107.18,
       "price": 1378974,
-      "from": 3,
-      "to": 2,
-      "from_key": "reserved",
-      "to_key": "sold"
-    },
-    {
-      "ts": "2026-08-31T10:34:32.214947+00:00",
-      "id": 824,
-      "label": "C6",
-      "no": "26",
-      "room": "2+1",
-      "net_area": 59.53,
-      "price": 922986,
       "from": 3,
       "to": 2,
       "from_key": "reserved",
@@ -12467,8 +12467,8 @@
       "key": "2+1",
       "total": 1076,
       "available": 822,
-      "sold": 249,
-      "reserved": 5,
+      "sold": 250,
+      "reserved": 4,
       "avg_available_price": 1092088,
       "min_available_price": 863040,
       "max_available_price": 1594208
@@ -13453,8 +13453,8 @@
       "max_available_price": 1516343,
       "total": 24,
       "available": 21,
-      "sold": 2,
-      "reserved": 1,
+      "sold": 3,
+      "reserved": 0,
       "label": "A18"
     },
     {
