@@ -14,8 +14,10 @@ function tlShort(n) {
 }
 const price4 = (n) => n.toLocaleString("tr-TR", { minimumFractionDigits: 2, maximumFractionDigits: 4 });
 
-const STOCK_URL = (from, to) =>
-  `https://gate.fintables.com/barbar/udf/history?symbol=DMLKT.G&resolution=5&from=${from}&to=${to}`;
+// Fintables occasionally moves the host; try known hosts in order.
+const STOCK_HOSTS = ["https://markets.fintables.com", "https://gate.fintables.com"];
+const STOCK_PATH = (from, to) =>
+  `/barbar/udf/history?symbol=DMLKT.G&resolution=5&from=${from}&to=${to}`;
 const aptUrl = (id) => `https://proje.gayrimenkulsertifika.com/apartments/${id}`;
 
 let certPrice = null; // live TL per certificate
@@ -38,9 +40,16 @@ async function loadCertPrice() {
   const to = Math.floor(Date.now() / 1000);
   const from = to - 3 * 86400;
   try {
-    const r = await fetch(STOCK_URL(from, to));
-    if (!r.ok) throw new Error(r.status);
-    const j = await r.json();
+    let j = null;
+    for (const host of STOCK_HOSTS) {
+      try {
+        const r = await fetch(host + STOCK_PATH(from, to));
+        if (!r.ok) continue;
+        j = await r.json();
+        if (j && (j.c || []).length) break;
+      } catch (e) { /* try next host */ }
+    }
+    if (!j) throw new Error("all hosts failed");
     const closes = j.c || [];
     const times = j.t || [];
     if (!closes.length) throw new Error("no data");
