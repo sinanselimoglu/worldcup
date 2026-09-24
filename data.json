@@ -1,26 +1,39 @@
 {
-  "updated_at": "2026-09-24T13:14:31.079171+00:00",
+  "updated_at": "2026-09-24T18:13:11.180302+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
   "stock_symbol": "DMLKT.G",
   "total": 2214,
   "status": {
-    "available": 1700,
+    "available": 1701,
     "sold": 512,
-    "reserved": 2
+    "reserved": 1
   },
   "pricing": {
-    "available_value": 2275878290,
+    "available_value": 2277062559,
     "sold_value": 0,
-    "avg_available_price": 1338752,
+    "avg_available_price": 1338661,
     "min_available_price": 708889,
     "max_available_price": 2123851
   },
   "tracking_since": "2026-08-21T07:25:07.857593+00:00",
-  "sold_24h": 3,
+  "sold_24h": 2,
   "sold_7d": 10,
   "recent_changes": [
+    {
+      "ts": "2026-09-24T18:13:11.176224+00:00",
+      "id": 618,
+      "label": "C1 · Ada 2473",
+      "no": "3",
+      "room": "2+1",
+      "net_area": 59.53,
+      "price": 1184269,
+      "from": 3,
+      "to": 1,
+      "from_key": "reserved",
+      "to_key": "available"
+    },
     {
       "ts": "2026-09-24T13:14:31.076212+00:00",
       "id": 2160,
@@ -523,19 +536,6 @@
       "room": "2+1",
       "net_area": 76.57,
       "price": 1125082,
-      "from": 1,
-      "to": 3,
-      "from_key": "available",
-      "to_key": "reserved"
-    },
-    {
-      "ts": "2026-09-09T08:39:32.569024+00:00",
-      "id": 1196,
-      "label": "C16",
-      "no": "25",
-      "room": "1+1",
-      "net_area": 44.98,
-      "price": 729470,
       "from": 1,
       "to": 3,
       "from_key": "available",
@@ -4913,6 +4913,13 @@
         "no": "14",
         "price": 1182713,
         "net_area": 76.84
+      },
+      {
+        "id": 618,
+        "block": "C1 · Ada 2473",
+        "no": "3",
+        "price": 1184269,
+        "net_area": 59.53
       },
       {
         "id": 586,
@@ -12466,10 +12473,10 @@
     {
       "key": "2+1",
       "total": 1076,
-      "available": 821,
+      "available": 822,
       "sold": 254,
-      "reserved": 1,
-      "avg_available_price": 1092022,
+      "reserved": 0,
+      "avg_available_price": 1092135,
       "min_available_price": 863040,
       "max_available_price": 1594208
     },
@@ -12785,13 +12792,13 @@
       "name": "C1",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1252442,
+      "avg_available_price": 1249033,
       "min_available_price": 887038,
       "max_available_price": 1772924,
       "total": 36,
-      "available": 19,
+      "available": 20,
       "sold": 16,
-      "reserved": 1,
+      "reserved": 0,
       "label": "C1 · Ada 2473"
     },
     {
