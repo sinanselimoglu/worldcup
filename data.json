@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T06:51:14.181041+00:00",
+  "updated_at": "2026-10-01T14:11:58.633780+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
@@ -18,8 +18,8 @@
     "max_available_price": 2123851
   },
   "tracking_since": "2026-08-21T07:25:07.857593+00:00",
-  "sold_24h": 1,
-  "sold_7d": 4,
+  "sold_24h": 0,
+  "sold_7d": 2,
   "recent_changes": [
     {
       "ts": "2026-10-01T06:51:14.176873+00:00",
