@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T01:37:31.536688+00:00",
+  "updated_at": "2026-10-05T08:23:35.944970+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
@@ -7,8 +7,8 @@
   "total": 2214,
   "status": {
     "available": 1692,
-    "sold": 516,
-    "reserved": 6
+    "sold": 519,
+    "reserved": 3
   },
   "pricing": {
     "available_value": 2265815756,
@@ -18,9 +18,48 @@
     "max_available_price": 2123851
   },
   "tracking_since": "2026-08-21T07:25:07.857593+00:00",
-  "sold_24h": 0,
-  "sold_7d": 4,
+  "sold_24h": 3,
+  "sold_7d": 7,
   "recent_changes": [
+    {
+      "ts": "2026-10-05T08:23:35.940796+00:00",
+      "id": 2056,
+      "label": "C4 · Ada 2474",
+      "no": "30",
+      "room": "2+1",
+      "net_area": 59.53,
+      "price": 957310,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
+    {
+      "ts": "2026-10-05T08:23:35.940796+00:00",
+      "id": 1307,
+      "label": "D2",
+      "no": "20",
+      "room": "4+1",
+      "net_area": 143.72,
+      "price": 1981351,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
+    {
+      "ts": "2026-10-05T08:23:35.940796+00:00",
+      "id": 645,
+      "label": "C1 · Ada 2473",
+      "no": "30",
+      "room": "3+1",
+      "net_area": 98.49,
+      "price": 1430960,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
     {
       "ts": "2026-10-02T13:35:00.012926+00:00",
       "id": 1668,
@@ -501,45 +540,6 @@
       "to": 2,
       "from_key": "reserved",
       "to_key": "sold"
-    },
-    {
-      "ts": "2026-09-16T09:05:15.180558+00:00",
-      "id": 2160,
-      "label": "E4 · Ada 2474",
-      "no": "14",
-      "room": "4+1",
-      "net_area": 137.97,
-      "price": 1996033,
-      "from": 1,
-      "to": 3,
-      "from_key": "available",
-      "to_key": "reserved"
-    },
-    {
-      "ts": "2026-09-16T09:05:15.180558+00:00",
-      "id": 68,
-      "label": "A3 · Ada 2473",
-      "no": "11",
-      "room": "2+1",
-      "net_area": 76.57,
-      "price": 1081286,
-      "from": 1,
-      "to": 3,
-      "from_key": "available",
-      "to_key": "reserved"
-    },
-    {
-      "ts": "2026-09-15T11:08:51.985695+00:00",
-      "id": 1631,
-      "label": "A3 · Ada 2474",
-      "no": "20",
-      "room": "2+1",
-      "net_area": 76.57,
-      "price": 1112697,
-      "from": 1,
-      "to": 3,
-      "from_key": "available",
-      "to_key": "reserved"
     }
   ],
   "available_by_room": {
@@ -12411,8 +12411,8 @@
       "key": "2+1",
       "total": 1076,
       "available": 818,
-      "sold": 256,
-      "reserved": 2,
+      "sold": 257,
+      "reserved": 1,
       "avg_available_price": 1092420,
       "min_available_price": 863040,
       "max_available_price": 1594208
@@ -12421,8 +12421,8 @@
       "key": "3+1",
       "total": 758,
       "available": 671,
-      "sold": 84,
-      "reserved": 3,
+      "sold": 85,
+      "reserved": 2,
       "avg_available_price": 1490315,
       "min_available_price": 1384916,
       "max_available_price": 2012508
@@ -12431,8 +12431,8 @@
       "key": "4+1",
       "total": 205,
       "available": 184,
-      "sold": 20,
-      "reserved": 1,
+      "sold": 21,
+      "reserved": 0,
       "avg_available_price": 1942453,
       "min_available_price": 1833345,
       "max_available_price": 2123851
@@ -12734,8 +12734,8 @@
       "max_available_price": 1772924,
       "total": 36,
       "available": 19,
-      "sold": 16,
-      "reserved": 1,
+      "sold": 17,
+      "reserved": 0,
       "label": "C1 · Ada 2473"
     },
     {
@@ -12825,8 +12825,8 @@
       "max_available_price": 1516699,
       "total": 39,
       "available": 25,
-      "sold": 11,
-      "reserved": 3,
+      "sold": 12,
+      "reserved": 2,
       "label": "C4 · Ada 2474"
     },
     {
@@ -12929,8 +12929,8 @@
       "max_available_price": 2006505,
       "total": 27,
       "available": 22,
-      "sold": 4,
-      "reserved": 1,
+      "sold": 5,
+      "reserved": 0,
       "label": "D2"
     },
     {
