@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-10-09T02:49:43.726461+00:00",
+  "updated_at": "2026-10-09T10:05:27.672777+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
   "stock_symbol": "DMLKT.G",
   "total": 2214,
   "status": {
-    "available": 1689,
+    "available": 1688,
     "sold": 523,
-    "reserved": 2
+    "reserved": 3
   },
   "pricing": {
-    "available_value": 2263054765,
+    "available_value": 2262107592,
     "sold_value": 0,
-    "avg_available_price": 1339878,
+    "avg_available_price": 1340111,
     "min_available_price": 708889,
     "max_available_price": 2123851
   },
@@ -21,6 +21,19 @@
   "sold_24h": 1,
   "sold_7d": 9,
   "recent_changes": [
+    {
+      "ts": "2026-10-09T10:05:27.668546+00:00",
+      "id": 1131,
+      "label": "C14",
+      "no": "21",
+      "room": "2+1",
+      "net_area": 59.53,
+      "price": 947173,
+      "from": 1,
+      "to": 3,
+      "from_key": "available",
+      "to_key": "reserved"
+    },
     {
       "ts": "2026-10-08T17:43:39.394479+00:00",
       "id": 1975,
@@ -527,19 +540,6 @@
       "to": 2,
       "from_key": "reserved",
       "to_key": "sold"
-    },
-    {
-      "ts": "2026-09-18T07:05:22.987215+00:00",
-      "id": 1664,
-      "label": "A4 · Ada 2474",
-      "no": "23",
-      "room": "2+1",
-      "net_area": 76.57,
-      "price": 1138220,
-      "from": 1,
-      "to": 3,
-      "from_key": "available",
-      "to_key": "reserved"
     }
   ],
   "available_by_room": {
@@ -2259,13 +2259,6 @@
         "block": "C5 · Ada 2474",
         "no": "6",
         "price": 947141,
-        "net_area": 59.53
-      },
-      {
-        "id": 1131,
-        "block": "C14",
-        "no": "21",
-        "price": 947173,
         "net_area": 59.53
       },
       {
@@ -12389,10 +12382,10 @@
     {
       "key": "2+1",
       "total": 1076,
-      "available": 815,
+      "available": 814,
       "sold": 259,
-      "reserved": 2,
-      "avg_available_price": 1093054,
+      "reserved": 3,
+      "avg_available_price": 1093233,
       "min_available_price": 863040,
       "max_available_price": 1594208
     },
@@ -13436,13 +13429,13 @@
       "name": "C14",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1231576,
+      "avg_available_price": 1248306,
       "min_available_price": 775766,
       "max_available_price": 1500518,
       "total": 31,
-      "available": 18,
+      "available": 17,
       "sold": 12,
-      "reserved": 1,
+      "reserved": 2,
       "label": "C14"
     },
     {
