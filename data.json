@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T08:38:44.967970+00:00",
+  "updated_at": "2026-10-12T18:36:58.467456+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
@@ -7,8 +7,8 @@
   "total": 2214,
   "status": {
     "available": 1687,
-    "sold": 523,
-    "reserved": 4
+    "sold": 524,
+    "reserved": 3
   },
   "pricing": {
     "available_value": 2260621200,
@@ -18,9 +18,22 @@
     "max_available_price": 2123851
   },
   "tracking_since": "2026-08-21T07:25:07.857593+00:00",
-  "sold_24h": 0,
-  "sold_7d": 4,
+  "sold_24h": 1,
+  "sold_7d": 2,
   "recent_changes": [
+    {
+      "ts": "2026-10-12T18:36:58.464097+00:00",
+      "id": 1120,
+      "label": "C14",
+      "no": "10",
+      "room": "2+1",
+      "net_area": 59.53,
+      "price": 914566,
+      "from": 3,
+      "to": 2,
+      "from_key": "reserved",
+      "to_key": "sold"
+    },
     {
       "ts": "2026-10-12T08:38:44.963717+00:00",
       "id": 1864,
@@ -523,19 +536,6 @@
       "room": "4+1",
       "net_area": 137.97,
       "price": 1945918,
-      "from": 3,
-      "to": 2,
-      "from_key": "reserved",
-      "to_key": "sold"
-    },
-    {
-      "ts": "2026-09-18T12:43:56.868812+00:00",
-      "id": 68,
-      "label": "A3 · Ada 2473",
-      "no": "11",
-      "room": "2+1",
-      "net_area": 76.57,
-      "price": 1081286,
       "from": 3,
       "to": 2,
       "from_key": "reserved",
@@ -12376,8 +12376,8 @@
       "key": "2+1",
       "total": 1076,
       "available": 814,
-      "sold": 259,
-      "reserved": 3,
+      "sold": 260,
+      "reserved": 2,
       "avg_available_price": 1093233,
       "min_available_price": 863040,
       "max_available_price": 1594208
@@ -13427,8 +13427,8 @@
       "max_available_price": 1500518,
       "total": 31,
       "available": 17,
-      "sold": 12,
-      "reserved": 2,
+      "sold": 13,
+      "reserved": 1,
       "label": "C14"
     },
     {
