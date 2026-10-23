@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-10-23T01:13:44.766047+00:00",
+  "updated_at": "2026-10-23T06:59:51.567706+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
   "stock_symbol": "DMLKT.G",
   "total": 2214,
   "status": {
-    "available": 1680,
+    "available": 1679,
     "sold": 530,
-    "reserved": 4
+    "reserved": 5
   },
   "pricing": {
-    "available_value": 2251450500,
+    "available_value": 2249976451,
     "sold_value": 0,
-    "avg_available_price": 1340149,
+    "avg_available_price": 1340069,
     "min_available_price": 729470,
     "max_available_price": 2123851
   },
@@ -21,6 +21,19 @@
   "sold_24h": 2,
   "sold_7d": 5,
   "recent_changes": [
+    {
+      "ts": "2026-10-23T06:59:51.563318+00:00",
+      "id": 1633,
+      "label": "A3 · Ada 2474",
+      "no": "22",
+      "room": "3+1",
+      "net_area": 103.88,
+      "price": 1474049,
+      "from": 1,
+      "to": 3,
+      "from_key": "available",
+      "to_key": "reserved"
+    },
     {
       "ts": "2026-10-22T13:28:51.415724+00:00",
       "id": 1872,
@@ -527,19 +540,6 @@
       "to": 3,
       "from_key": "available",
       "to_key": "reserved"
-    },
-    {
-      "ts": "2026-09-24T18:13:11.176224+00:00",
-      "id": 618,
-      "label": "C1 · Ada 2473",
-      "no": "3",
-      "room": "2+1",
-      "net_area": 59.53,
-      "price": 1184269,
-      "from": 3,
-      "to": 1,
-      "from_key": "reserved",
-      "to_key": "available"
     }
   ],
   "available_by_room": {
@@ -8718,13 +8718,6 @@
         "net_area": 98.49
       },
       {
-        "id": 1633,
-        "block": "A3 · Ada 2474",
-        "no": "22",
-        "price": 1474049,
-        "net_area": 103.88
-      },
-      {
         "id": 1665,
         "block": "A4 · Ada 2474",
         "no": "24",
@@ -12336,10 +12329,10 @@
     {
       "key": "3+1",
       "total": 758,
-      "available": 669,
+      "available": 668,
       "sold": 89,
-      "reserved": 0,
-      "avg_available_price": 1490270,
+      "reserved": 1,
+      "avg_available_price": 1490294,
       "min_available_price": 1384916,
       "max_available_price": 2012508
     },
@@ -12424,13 +12417,13 @@
       "name": "A3",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1307977,
+      "avg_available_price": 1299237,
       "min_available_price": 1083604,
       "max_available_price": 1566598,
       "total": 28,
-      "available": 20,
+      "available": 19,
       "sold": 8,
-      "reserved": 0,
+      "reserved": 1,
       "label": "A3 · Ada 2474"
     },
     {
