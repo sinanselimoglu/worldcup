@@ -1,26 +1,65 @@
 {
-  "updated_at": "2026-11-03T00:33:03.573434+00:00",
+  "updated_at": "2026-11-03T07:35:40.648633+00:00",
   "project": "DAMLA KENT",
   "unit": "certificates",
   "ipo_price": 7.59,
   "stock_symbol": "DMLKT.G",
   "total": 2214,
   "status": {
-    "available": 1674,
+    "available": 1671,
     "sold": 535,
-    "reserved": 5
+    "reserved": 8
   },
   "pricing": {
-    "available_value": 2244491829,
+    "available_value": 2241508623,
     "sold_value": 0,
-    "avg_available_price": 1340796,
-    "min_available_price": 729470,
+    "avg_available_price": 1341417,
+    "min_available_price": 754255,
     "max_available_price": 2123851
   },
   "tracking_since": "2026-08-21T07:25:07.857593+00:00",
   "sold_24h": 1,
   "sold_7d": 1,
   "recent_changes": [
+    {
+      "ts": "2026-11-03T07:35:40.644027+00:00",
+      "id": 1812,
+      "label": "A9 · Ada 2474",
+      "no": "25",
+      "room": "2+1",
+      "net_area": 76.57,
+      "price": 1136227,
+      "from": 1,
+      "to": 3,
+      "from_key": "available",
+      "to_key": "reserved"
+    },
+    {
+      "ts": "2026-11-03T07:35:40.644027+00:00",
+      "id": 1805,
+      "label": "A9 · Ada 2474",
+      "no": "18",
+      "room": "2+1",
+      "net_area": 76.57,
+      "price": 1117509,
+      "from": 1,
+      "to": 3,
+      "from_key": "available",
+      "to_key": "reserved"
+    },
+    {
+      "ts": "2026-11-03T07:35:40.644027+00:00",
+      "id": 1166,
+      "label": "C15",
+      "no": "25",
+      "room": "1+1",
+      "net_area": 44.98,
+      "price": 729470,
+      "from": 1,
+      "to": 3,
+      "from_key": "available",
+      "to_key": "reserved"
+    },
     {
       "ts": "2026-11-02T17:50:32.889088+00:00",
       "id": 1808,
@@ -501,56 +540,10 @@
       "to": 2,
       "from_key": "reserved",
       "to_key": "sold"
-    },
-    {
-      "ts": "2026-10-02T13:35:00.012926+00:00",
-      "id": 1668,
-      "label": "A4 · Ada 2474",
-      "no": "27",
-      "room": "2+1",
-      "net_area": 76.57,
-      "price": 1149657,
-      "from": 3,
-      "to": 2,
-      "from_key": "reserved",
-      "to_key": "sold"
-    },
-    {
-      "ts": "2026-10-02T13:35:00.012926+00:00",
-      "id": 799,
-      "label": "C6",
-      "no": "1",
-      "room": "1+1",
-      "net_area": 44.98,
-      "price": 758825,
-      "from": 3,
-      "to": 2,
-      "from_key": "reserved",
-      "to_key": "sold"
-    },
-    {
-      "ts": "2026-10-01T06:51:14.176873+00:00",
-      "id": 2056,
-      "label": "C4 · Ada 2474",
-      "no": "30",
-      "room": "2+1",
-      "net_area": 59.53,
-      "price": 957310,
-      "from": 1,
-      "to": 3,
-      "from_key": "available",
-      "to_key": "reserved"
     }
   ],
   "available_by_room": {
     "1+1": [
-      {
-        "id": 1166,
-        "block": "C15",
-        "no": "25",
-        "price": 729470,
-        "net_area": 44.98
-      },
       {
         "id": 583,
         "block": "B3",
@@ -3879,13 +3872,6 @@
         "net_area": 76.57
       },
       {
-        "id": 1805,
-        "block": "A9 · Ada 2474",
-        "no": "18",
-        "price": 1117509,
-        "net_area": 76.57
-      },
-      {
         "id": 167,
         "block": "A6 · Ada 2473",
         "no": "26",
@@ -4303,13 +4289,6 @@
         "block": "A15",
         "no": "21",
         "price": 1135971,
-        "net_area": 76.57
-      },
-      {
-        "id": 1812,
-        "block": "A9 · Ada 2474",
-        "no": "25",
-        "price": 1136227,
         "net_area": 76.57
       },
       {
@@ -12274,20 +12253,20 @@
     {
       "key": "1+1",
       "total": 175,
-      "available": 18,
+      "available": 17,
       "sold": 156,
-      "reserved": 1,
-      "avg_available_price": 783026,
-      "min_available_price": 729470,
+      "reserved": 2,
+      "avg_available_price": 786176,
+      "min_available_price": 754255,
       "max_available_price": 835253
     },
     {
       "key": "2+1",
       "total": 1076,
-      "available": 807,
+      "available": 805,
       "sold": 266,
-      "reserved": 3,
-      "avg_available_price": 1094084,
+      "reserved": 5,
+      "avg_available_price": 1094003,
       "min_available_price": 863040,
       "max_available_price": 1594208
     },
@@ -12538,13 +12517,13 @@
       "name": "A9",
       "island": "2474",
       "parcel": "2",
-      "avg_available_price": 1300319,
+      "avg_available_price": 1313661,
       "min_available_price": 943525,
       "max_available_price": 1510918,
       "total": 30,
-      "available": 28,
+      "available": 26,
       "sold": 2,
-      "reserved": 0,
+      "reserved": 2,
       "label": "A9 · Ada 2474"
     },
     {
@@ -13344,13 +13323,13 @@
       "name": "C15",
       "island": "2473",
       "parcel": "2",
-      "avg_available_price": 1137037,
-      "min_available_price": 729470,
+      "avg_available_price": 1154758,
+      "min_available_price": 782155,
       "max_available_price": 1514330,
       "total": 30,
-      "available": 24,
+      "available": 23,
       "sold": 6,
-      "reserved": 0,
+      "reserved": 1,
       "label": "C15"
     },
     {
